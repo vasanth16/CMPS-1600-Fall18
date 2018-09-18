@@ -96,7 +96,7 @@ class MyLong{
 	 public void multi (MyLong other){
 	 	MyLong finala = new MyLong();
 	 	
-	 	ArrayList<MyLong> answer = new ArrayList<>();
+	 	ArrayList<MyLong> answer = new ArrayList<MyLong>();
 	 	for (int i = this.storage.size()-1; i >= 0; i--){
 	 		for (int j = other.storage.size()-1; j >=0 ; j--){
 	 			MyLong temp = new MyLong();
@@ -106,10 +106,10 @@ class MyLong{
 	 			answer.add(temp);
 	 		}
 	 	}
-	 	finala = answer.get(0);
+	 	//finala = answer.get(0);
 
-	 	for (int x = 1; x < answer.size(); x++){
-	 		//System.out.println(answer.get(x));
+	 	for (int x = 0; x < answer.size(); x++){
+	 		answer.get(x).getLong();
 
 	 		finala.storage = finala.add(answer.get(x));
 	 		//System.out.println(finala.getLong());
