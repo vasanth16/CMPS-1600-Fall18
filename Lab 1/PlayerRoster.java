@@ -1,8 +1,5 @@
 import java.util.*;
 
-
-
-
 class PlayerRoster{
 	public static void main (String[] args){
 		int jNumber;
