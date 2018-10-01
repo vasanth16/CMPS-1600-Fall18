@@ -2,7 +2,7 @@ import java.util.*;
 
 
 
-class Rectangle{
+public class Rectangle{
 	private double len;
 	private	double wid;
 
@@ -59,7 +59,7 @@ class Rectangle{
 	}
 }
 
-class RectangleTester{
+public class RectangleTester{
 	public static void main (String[] args){
 
 

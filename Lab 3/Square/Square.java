@@ -1,7 +1,7 @@
 import java.util.*;
 
 
-class Square extends Rectangle{
+public class Square extends Rectangle{
 	private int size = 0;
 
 	public int getSize(){
@@ -33,7 +33,7 @@ class Square extends Rectangle{
 }
 
 
-class SquareTester {
+public class SquareTester {
 	public static void main(String[] args) {
 		Rectangle a = new Rectangle (5.0, 6.0);
 		Rectangle b = new Rectangle (5.0, 6.0);
