@@ -1,8 +1,9 @@
-package junittesting;
+//package junittesting;
 import org.junit.*;
 //import org.junit.jupiter.api.Test;
-import org.junit.runner.*;
+//import org.junit.runner.*;
 import java.util.*;
+import Junit.framework.*;
 
 
 public class SquareTester {

@@ -1,4 +1,4 @@
-import junittesting.Rectangle;
+//import junittesting.Rectangle;
 
 import java.util.*;
 //package junittesting;

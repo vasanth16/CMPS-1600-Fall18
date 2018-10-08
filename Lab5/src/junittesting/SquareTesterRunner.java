@@ -1,5 +1,4 @@
-package junittesting;
-
+import Junit.framwork.*;
 public class SquareTesterRunner {
     public static void main(String[] args) {
         Result result = JUnitCore.runClasses(SquareTester.class);
