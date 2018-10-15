@@ -30,7 +30,7 @@ public class IDCardFrame extends JFrame{
 		this.setSize(1000, 600);
 		//this.setResizable(false);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		this.setVisible(true);
+		
 
 		// Picture work
 
@@ -82,7 +82,7 @@ public class IDCardFrame extends JFrame{
 		this.add(address, gbc);
 
 
-
+this.setVisible(true);
 
 	}
 
