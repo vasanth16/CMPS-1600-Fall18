@@ -31,7 +31,7 @@ class MyLong{
 	 		String tempy = String.valueOf(storage.get(i));
 	 		printing += tempy;
 	 	}
-	 	System.out.println(printing);
+	 	//System.out.println(printing);
 		return printing;
 	 }
 
@@ -119,6 +119,15 @@ class MyLong{
 
 	 	finala.getLong();
 
+	 }
+
+	 public void sub (MyLong other){
+	 	
+	 }
+
+	 @Override
+	 public String toString(){
+	 	return this.getLong()
 	 }
 
 
