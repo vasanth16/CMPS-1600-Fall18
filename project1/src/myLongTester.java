@@ -11,7 +11,7 @@ public class myLongTester {
         myLongTwo yent = new myLongTwo(yet);
 
         //System.out.println(numy.add(yent));
-        System.out.println(numy.multi(yent));
+        numy.multiply(yent);
         //System.out.println(yent.getLong());
     }
 

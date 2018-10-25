@@ -27,8 +27,9 @@ public class myLongTwo {
         //System.out.println(printing);
         return printing;
     }
-    public ArrayList<Integer> add (myLongTwo other){
+    public myLongTwo add (myLongTwo other){
         ArrayList<Integer> output = new ArrayList<>();
+        String finalAnswer = "";
 
         // If this array is a longer number then the number passed in
         if (this.storage.size() >= other.storage.size()) {
@@ -41,6 +42,7 @@ public class myLongTwo {
                 int numTwo = other.storage.get(j);
                 int answer = numOne + numTwo;
                 output.add(0, answer);
+                //System.out.println(output);
             }
 
             for (int k = output.size() - 1; k >= 0; k--) {
@@ -61,6 +63,7 @@ public class myLongTwo {
         }else{
             int tensAway = other.storage.size() - this.storage.size();
             for (int i = 0; i < tensAway; i++){
+
                 this.storage.add(0,0);
             }
 
@@ -87,57 +90,82 @@ public class myLongTwo {
             }
         }
 
-        return output;
+
+        myLongTwo addOutput = new myLongTwo(output);
+        //System.out.println(addOutput);
+        return addOutput;
+
+
 
 
     }
 
-    public void multiply(myLongTwo other){
+    public myLongTwo subtract (myLongTwo other){
+
+    }
+
+    public myLongTwo multiply(myLongTwo other){
+
+        ArrayList<myLongTwo> pieces = new ArrayList<>();
+        myLongTwo finalAnswer = new myLongTwo();
 
         for (int i = this.storage.size()-1; i >=0; i--){
-            for (int j = other.storage.size(); j >= 0; j--){
-                int times = (int)((this.storage.get(i) * other.storage.get(j) * Math.pow(10, -(i+j))));
+            for (int j = other.storage.size()-1; j >= 0; j--){
+                int times = (int)((this.storage.get(i) * other.storage.get(j)) * (Math.pow(10,((i+j)))));
                 String TTwo = String.valueOf(times);
+               // System.out.println(TTwo);
+                myLongTwo temp = new myLongTwo(String.valueOf(TTwo));
+                pieces.add(temp);
             }
         }
-    }
 
 
-    public myLongTwo multi (myLongTwo other){
-        myLongTwo finala = new myLongTwo();
 
-        ArrayList<myLongTwo> answer = new ArrayList<myLongTwo>();
-        for (int i = this.storage.size()-1; i >= 0; i--){
-            for (int j = other.storage.size()-1; j >=0 ; j--){
-                myLongTwo temp = new myLongTwo();
-                int p =(int)((this.storage.get(i) * other.storage.get(j)) * (Math.pow(10,((i+j)))));
-                System.out.println(p);
-                String tempy = String.valueOf(p);
-                temp.setLong(tempy);
-                answer.add(temp);
-                System.out.println(answer);
+        for (int i = pieces.size()-1; i >= 0; i --){
+            myLongTwo additive = pieces.get(i);
+            //System.out.println(additive);
+            finalAnswer = finalAnswer.add(additive);
+        }
+
+        //System.out.println(finalAnswer);
+        if (finalAnswer.getLong().length() < this.getLong().length()){
+            int diff = this.getLong().length() - finalAnswer.getLong().length();
+            for (int i =0; i<=diff;i++){
+                finalAnswer.storage.add(0);
+            }
+        }else if (finalAnswer.getLong().length() < other.getLong().length()){
+            int diff = other.getLong().length() - finalAnswer.getLong().length();
+            for (int i =0; i<=diff;i++){
+                finalAnswer.storage.add(0);
             }
         }
-        finala = answer.get(0);
-        //System.out.println(finala);
-
-        for (int x = 0; x < answer.size(); x++){
-            answer.get(x).getLong();
-
-            finala.storage = finala.add(answer.get(x));
-           // System.out.println(finala.getLong());
+        ArrayList pali = other.storage;
+        Collections.reverse(pali);
+        //System.out.println(pali);
+        //System.out.println(this.storage);
+        if (this.getLong().equals(pali.toString())){
+            Collections.reverse(finalAnswer.storage);
         }
-
-        Collections.reverse(finala.storage);
-        return finala;
-
+        System.out.println(finalAnswer);
+        return finalAnswer;
     }
+
     @Override
     public String toString(){
         return this.getLong();
     }
 
     public myLongTwo(){}
+
+    public myLongTwo(ArrayList<Integer> list){
+        String finalAnswer = "";
+        for (int i = 0; i<list.size(); i++){
+            String temp = String.valueOf(list.get(i));
+            //System.out.println(temp);
+            finalAnswer = finalAnswer + temp;
+        }
+        this.setLong(finalAnswer);
+    }
 
     public myLongTwo(String num){
         this.setLong(num);
