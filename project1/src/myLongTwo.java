@@ -7,14 +7,24 @@ public class myLongTwo {
     private String printing;
     private int counter = 0;
     private Long converted;
+    private boolean isNeg;
 
     public void setLong (String num){
         //storage = new int[num.length()+1];
         for (int i = 0; i < num.length(); i++){
             String number = Character.toString(num.charAt(i));
-            int converted = Integer.parseInt(number);
-            //storage[i] = converted;
-            storage.add(i, converted);
+            if (number.equals("-")) {
+                isNeg = true;
+            } else if (this.isNeg){
+                int converted = Integer.parseInt(number);
+                //storage[i] = converted;
+                storage.add(i-1, converted);
+            }
+            else {
+                int converted = Integer.parseInt(number);
+                //storage[i] = converted;
+                storage.add(i, converted);
+            }
         }
     }
 
@@ -30,6 +40,15 @@ public class myLongTwo {
     public myLongTwo add (myLongTwo other){
         ArrayList<Integer> output = new ArrayList<>();
         String finalAnswer = "";
+
+        if (this.isNeg){
+            int temp = this.storage.get(0);
+            temp *= -1;
+            return this.subtract(other);
+        } else if (other.isNeg){
+            int temp = other.storage.get(0);
+            return other.subtract(this);
+        }
 
         // If this array is a longer number then the number passed in
         if (this.storage.size() >= other.storage.size()) {
@@ -101,7 +120,103 @@ public class myLongTwo {
     }
 
     public myLongTwo subtract (myLongTwo other){
+        ArrayList<Integer> output = new ArrayList<>();
+            if (this.storage.size() > other.storage.size()){
+                int tensAway = this.storage.size() - other.storage.size();
+                for (int i = 0; i < tensAway; i++){
 
+                    other.storage.add(0,0);
+                }
+                for (int i = this.storage.size()-1; i >= 0; i-- ){
+                    int num1 = this.storage.get(i);
+                    int num2 = other.storage.get(i);
+                    if (num1 < num2){
+                        num1 += 10;
+                        this.storage.set(i-1,this.storage.get(i-1)-1);
+                    }
+                    int answer = num1 - num2;
+                    output.add(0,answer);
+
+                }
+            }
+            else if (this.storage.size() < other.storage.size()){
+                int tensAway = other.storage.size() - this.storage.size();
+                for (int i = 0; i < tensAway; i++){
+
+                    this.storage.add(0,0);
+                }
+                System.out.println(this);
+                for (int i = other.storage.size()-1; i >= 0; i-- ) {
+                    int num1 = this.storage.get(i);
+                    int num2 = other.storage.get(i);
+                    //System.out.println(num2);
+                    if (num2< num1){
+                        num2 += 10;
+                        other.storage.set(i-1,other.storage.get(i-1)-1);
+                        //System.out.println(other);
+                    }
+                    int answer = num2 - num1;
+                    output.add(0,answer);
+                }
+            }else{
+                for (int i = 0; i < this.storage.size(); i++){
+                    int num1 = this.storage.get(i);
+                    int num2 = other.storage.get(i);
+                    if (num1 < num2){
+                        int tensAway = other.storage.size() - this.storage.size();
+                        for (int x = 0; x < tensAway; x++){
+
+                            this.storage.add(0,0);
+                        }
+                        System.out.println(this);
+                        for (int y = other.storage.size()-1; y >= 0; y-- ) {
+                            num1 = this.storage.get(y);
+                            num2 = other.storage.get(y);
+                            //System.out.println(num2);
+                            if (num2< num1){
+                                num2 += 10;
+                                other.storage.set(y-1,other.storage.get(y-1)-1);
+                               // System.out.println(other);
+                            }
+                            int answer = num2 - num1;
+                            System.out.println(answer);
+                            output.add(0,answer);
+                        }
+                        myLongTwo subOutput = new myLongTwo(output);
+                        System.out.println(subOutput.toString());
+                        return subOutput;
+
+                    } else if (num1 > num2){
+                        int tensAway = this.storage.size() - other.storage.size();
+                        for (int k = 0; k < tensAway; k++){
+
+                            other.storage.add(0,0);
+                        }
+                        for (int z = this.storage.size()-1; z >= 0; z-- ){
+                             num1 = this.storage.get(z);
+                             num2 = other.storage.get(z);
+                            if (num1 < num2){
+                                num1 += 10;
+                                this.storage.set(z-1,this.storage.get(z-1)-1);
+                            }
+                            int answer = num1 - num2;
+                            output.add(0,answer);
+
+                        }
+                        myLongTwo subOutput = new myLongTwo(output);
+                        //System.out.println(subOutput.toString());
+                        return subOutput;
+                    } else if (this.storage.equals(other.storage)){
+                        myLongTwo subOutput = new myLongTwo("0");
+                        //System.out.println(subOutput.toString());
+                        return subOutput;
+                    }
+                }
+            }
+
+            myLongTwo subOutput = new myLongTwo(output);
+            //System.out.println(subOutput.toString());
+            return subOutput;
     }
 
     public myLongTwo multiply(myLongTwo other){

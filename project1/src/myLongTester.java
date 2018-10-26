@@ -12,6 +12,7 @@ public class myLongTester {
 
         //System.out.println(numy.add(yent));
         numy.multiply(yent);
+        //numy.subtract(yent);
         //System.out.println(yent.getLong());
     }
 
