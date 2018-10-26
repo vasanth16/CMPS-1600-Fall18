@@ -245,12 +245,13 @@ public class myLongTwo {
         //System.out.println(finalAnswer);
         if (finalAnswer.getLong().length() < this.getLong().length()){
             int diff = this.getLong().length() - finalAnswer.getLong().length();
-            for (int i =0; i<=diff;i++){
+            for (int i =0; i<diff;i++){
                 finalAnswer.storage.add(0);
             }
-        }else if (finalAnswer.getLong().length() < other.getLong().length()){
+        }else //if (finalAnswer.getLong().length() < other.getLong().length())
+            {
             int diff = other.getLong().length() - finalAnswer.getLong().length();
-            for (int i =0; i<=diff;i++){
+            for (int i =0; i<diff;i++){
                 finalAnswer.storage.add(0);
             }
         }
@@ -261,6 +262,13 @@ public class myLongTwo {
         if (this.getLong().equals(pali.toString())){
             Collections.reverse(finalAnswer.storage);
         }
+
+        if (this.isNeg || other.isNeg){
+            int temp = finalAnswer.storage.get(0);
+            temp *= -1;
+            finalAnswer.storage.set(0,temp);
+        }
+
         System.out.println(finalAnswer);
         return finalAnswer;
     }
