@@ -243,7 +243,8 @@ public class Calculator extends JFrame implements ActionListener{
                     }
                     if (op.contains("+") || op.contains("-")){
                         for (int l = 0; l < op.length(); l++){
-                            System.out.println(op);
+                            System.out.println(l);
+                            //System.out.println(op);
                             if (op.charAt(l) == '+'){
                                 System.out.println("I hate this project so much");
                                 try{
@@ -252,13 +253,15 @@ public class Calculator extends JFrame implements ActionListener{
                                     StringBuilder yent = new StringBuilder(op);
                                     nums.add(num);
                                     ops.add("+");
-                                    String numOne = op.substring(0,i);
-                                    String numTwo = op.substring(i+1, op.length()-1);
+                                    String numOne = op.substring(0,l);
+                                    String numTwo = op.substring(l+1, op.length()-1);
                                     yent.deleteCharAt(l-1);
                                     yent.deleteCharAt(l+1);
                                     yent.deleteCharAt(l);
-                                    System.out.println(yent.toString());
+                                    //System.out.println(num);
+                                    //System.out.println(yent.toString());
                                     op = yent.toString();
+                                    System.out.println(op);
                                 } catch (Exception e){
                                     try {
                                         System.out.println("I hate this project so much3");
@@ -284,6 +287,7 @@ public class Calculator extends JFrame implements ActionListener{
                                         }
                                     }
                                 }
+                                l = 0;
 
                             } else if (op.charAt(l) == '-'){
                                 try{
@@ -344,7 +348,7 @@ public class Calculator extends JFrame implements ActionListener{
         while(!nums.isEmpty() && !ops.isEmpty()){
             String currNums = nums.poll();
             String currOp = ops.poll();
-            System.out.println(currNums);
+           // System.out.println(currNums);
 
             if (currOp.equals("*")){
                 if (currNums.length() > 1){
@@ -516,7 +520,6 @@ public class Calculator extends JFrame implements ActionListener{
 
 
 }
-
 
 /**
  * this is the main class with the main method that just calls the calculator and its SetUpUI method
