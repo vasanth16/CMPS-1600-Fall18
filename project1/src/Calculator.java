@@ -4,7 +4,7 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 /**
- * Project 1: Calculator for longs
+ * Project 1: Calculator for mylongs
  * @Author: Vasanth Rajasekaran
  */
 public class Calculator extends JFrame implements ActionListener{
@@ -30,6 +30,9 @@ public class Calculator extends JFrame implements ActionListener{
     private JButton clear = new JButton("Clear");
 
     private JTextField display = new JTextField(8);
+
+    Queue <String> nums = new LinkedList<String>();
+    Queue<String> ops = new LinkedList<String>();
 
 
     /**
@@ -91,8 +94,6 @@ public class Calculator extends JFrame implements ActionListener{
         this.add(plus,gbc);
 
 
-
-
         gbc.gridx = 0;
         gbc.gridy = 2;
         this.add(four,gbc);
@@ -106,9 +107,6 @@ public class Calculator extends JFrame implements ActionListener{
         gbc.gridx = 3;
         gbc.gridy = 2;
         this.add(minus,gbc);
-
-
-
 
 
         gbc.gridx = 2;
@@ -212,8 +210,251 @@ public class Calculator extends JFrame implements ActionListener{
             }
         } else {
             this.isValidInput(sum);
-            System.out.println(sum + "#");
+            System.out.println(sum );
         }
+    }
+
+    public void inputting (String s){
+        //Stack numbers = new Stack();
+        //Stack operations = new Stack();
+        //myLongTwo finalcal = new myLongTwo();
+        String op = "";
+        for (int i = 0; i < s.length(); i++){
+            if (s.charAt(i) == '('){
+                //System.out.println("yent");
+                for (int j = i; j<s.length(); j++){
+                    if (s.charAt(j) == ')'){
+                        op = s.substring(i+1, j);
+                    }
+                }
+
+                if (op.length() > 3) {
+                    if (op.contains("*")){
+                        for (int k = 0; k < op.length(); k++) {
+                            if (op.charAt(k) == '*'){
+                                String num = op.substring(0,k-1) + op.substring(k+1);
+                                StringBuilder yent = new StringBuilder(op);
+                                nums.add(num);
+                                ops.add("*");
+                                yent.delete(k-1,k+1);
+                                op = yent.toString();
+                            }
+                        }
+                    }
+                    if (op.contains("+") || op.contains("-")){
+                        for (int l = 0; l < op.length(); l++){
+                            System.out.println(op);
+                            if (op.charAt(l) == '+'){
+                                System.out.println("I hate this project so much");
+                                try{
+                                    System.out.println("I hate this project so much 2");
+                                    String num = op.charAt(l-1) +""+ op.charAt(l+1);
+                                    StringBuilder yent = new StringBuilder(op);
+                                    nums.add(num);
+                                    ops.add("+");
+                                    String numOne = op.substring(0,i);
+                                    String numTwo = op.substring(i+1, op.length()-1);
+                                    yent.deleteCharAt(l-1);
+                                    yent.deleteCharAt(l+1);
+                                    yent.deleteCharAt(l);
+                                    System.out.println(yent.toString());
+                                    op = yent.toString();
+                                } catch (Exception e){
+                                    try {
+                                        System.out.println("I hate this project so much3");
+                                        String num = op.charAt(l-1)+"";
+                                        StringBuilder yent = new StringBuilder();
+                                        nums.add(num);
+                                        ops.add("+");
+                                        //yent.delete(l-1,l);
+                                        yent.deleteCharAt(l-1);
+                                        yent.deleteCharAt(l);
+                                        op = yent.toString();
+                                    }catch (Exception f){
+                                        try{
+                                            String num = op.charAt(l+1)+"";
+                                            StringBuilder yent = new StringBuilder();
+                                            nums.add(num);
+                                            ops.add("+");
+                                            yent.deleteCharAt(l+1);
+                                            yent.deleteCharAt(l);
+                                            op = yent.toString();
+                                        }catch (Exception g){
+                                            System.out.println("Cant find");
+                                        }
+                                    }
+                                }
+
+                            } else if (op.charAt(l) == '-'){
+                                try{
+                                    String num = op.charAt(l-1) +""+ op.charAt(l+1);
+                                    StringBuilder yent = new StringBuilder(op);
+                                    nums.add(num);
+                                    ops.add("-");
+                                    yent.deleteCharAt(l-1);
+                                    yent.deleteCharAt(l+1);
+                                    yent.deleteCharAt(l);
+                                    op = yent.toString();
+                                } catch (Exception e){
+                                    try {
+                                        String num = op.charAt(l-1)+"";
+                                        StringBuilder yent = new StringBuilder();
+                                        nums.add(num);
+                                        ops.add("-");
+                                        yent.deleteCharAt(l-1);
+                                        yent.deleteCharAt(l);
+                                        op = yent.toString();
+                                    }catch (Exception f){
+                                        try{
+                                            String num = op.charAt(l+1)+"";
+                                            StringBuilder yent = new StringBuilder();
+                                            nums.add(num);
+                                            ops.add("-");
+                                            yent.deleteCharAt(l+1);
+                                            yent.deleteCharAt(l);
+                                            op = yent.toString();
+                                        }catch (Exception g){
+                                            System.out.println("Cant find");
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }else{
+                    for (i = 0; i<op.length(); i++ ){
+                        System.out.println("I hate this project so much 5");
+                        if (op.charAt(i) == '+' || op.charAt(i) == '-' ||op.charAt(i) == '*'){
+                            String numOne = op.charAt(0)+"";
+                            String numTwo = op.charAt(2)+"";
+                            String numbers = numOne+ "" + numTwo;
+                            System.out.println("Num 1: "+ numOne);
+                            System.out.println("Num 2:"+numTwo);
+                            nums.add(numbers);
+                            ops.add(op.charAt(i)+"");
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    public myLongTwo calculating (){
+        myLongTwo finalsum = new myLongTwo("0");
+        while(!nums.isEmpty() && !ops.isEmpty()){
+            String currNums = nums.poll();
+            String currOp = ops.poll();
+            System.out.println(currNums);
+
+            if (currOp.equals("*")){
+                if (currNums.length() > 1){
+                    String a = currNums.charAt(0)+"";
+                    String b = currNums.charAt(1)+"";
+
+                    myLongTwo aa = new myLongTwo(a);
+                    myLongTwo bb = new myLongTwo(b);
+
+                    finalsum = finalsum.add(aa.multiply(bb));
+                }else {
+                    myLongTwo aa = new myLongTwo(currNums);
+                    finalsum = finalsum.multiply(aa);
+                }
+            } else if (currOp.equals("+")){
+                if (currNums.length() > 1){
+                    String a = currNums.charAt(0)+"";
+                    String b = currNums.charAt(1)+"";
+
+                    myLongTwo aa = new myLongTwo(a);
+                    myLongTwo bb = new myLongTwo(b);
+
+                    finalsum = finalsum.add(aa.add(bb));
+                    //System.out.println(aa.add(bb).toString());
+                }else {
+                    System.out.println("allai");
+                    myLongTwo aa = new myLongTwo(currNums);
+
+                    finalsum = finalsum.add(aa);
+                }
+
+            } else if (currOp.equals("-")){
+                if (currNums.length() > 1){
+                    String a = currNums.charAt(0)+"";
+                    String b = currNums.charAt(1)+"";
+
+                    myLongTwo aa = new myLongTwo(a);
+                    myLongTwo bb = new myLongTwo(b);
+
+                    finalsum = finalsum.add(aa.subtract(bb));
+                }else {
+                    myLongTwo aa = new myLongTwo(currNums);
+                    finalsum = finalsum.subtract(aa);
+                }
+
+            }
+        }
+        return finalsum;
+    }
+
+    public myLongTwo calcs (String s){
+        Stack <String> order = new Stack ();
+        String others = "";
+        myLongTwo finalCal = new myLongTwo();
+
+        for (int i =0; i < s.length() ; i++){
+            if (s.charAt(i) == '('){
+                for (int j = i+1; j < s.length(); j++){
+                    if (s.charAt(j) == ')'){
+                        String op = s.substring(i+1, j);
+                        order.push(op);
+                        break;
+                        //System.out.println(op);
+                    }
+                }
+            }
+            else{
+                others += s.charAt(i);
+                try {
+                    if (s.charAt(i + 1) == '(') {
+                        order.push(others);
+                        others = "";
+                    }
+                } catch (Exception string){
+                    System.out.println(others + ":OThers");
+                    order.push(others);
+                    others = "";
+                }
+            }
+        }
+
+        while (!order.isEmpty()){
+            String curr = order.pop();
+            System.out.println("This is curr:" + curr);
+            if (curr.contains("+")){
+                for (int i = 0; i < curr.length(); i++){
+                    if (curr.charAt(i) == '+'){
+                        //System.out.println(curr);
+                        //Character numOne = curr.charAt(i-1);
+                        //String numA = numOne.toString();
+                        String numA = curr.substring(0,i);
+                        System.out.println("Num A:" +numA);
+
+                        Character numTwo = curr.charAt(i-1);
+                        //String numB = numTwo.toString();
+                        String numB = curr.substring(i+1, curr.length()-1);
+                        System.out.println("Num B: "+numB);
+
+                        myLongTwo A = new myLongTwo(numA);
+                        myLongTwo B = new myLongTwo(numB);
+
+                        finalCal = finalCal.add(A.add(B));
+                        break;
+
+                    }
+                }
+            }
+        }
+
+        return finalCal;
     }
 
     /**
@@ -223,24 +464,32 @@ public class Calculator extends JFrame implements ActionListener{
      */
     public boolean isValidInput(String s){
         Stack check = new Stack();
+        inputting(sum);
 
         try {
             for (int i = 0; i < s.length(); i++) {
-                System.out.println("y");
+
                 if (s.charAt(i) == '(') {
+                    //System.out.println("y");
                     check.push('(');
-                } else if (s.charAt(i) == ')') {
+                }
+                if (s.charAt(i) == ')') {
+                    //System.out.println("y");
                     check.pop();
                 }
             }
 
+
             if (check.isEmpty()) {
-                display.setText("Input is Valid");
+                //System.out.println(nums.peek());
+                //System.out.println(ops.peek());
+                //System.out.println(calcs(sum).toString());
+                display.setText(calculating().toString());
             } else {
                 display.setText("Input is invalid");
             }
         } catch(Exception stackEmpty){
-            display.setText("Input is invalid");
+            display.setText("yuhh");
             return false;
         }
 

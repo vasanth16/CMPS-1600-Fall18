@@ -184,6 +184,9 @@ public class myLongTwo {
                         }
                         myLongTwo subOutput = new myLongTwo(output);
                         System.out.println(subOutput.toString());
+                        int firstOne = subOutput.storage.get(0);
+                        firstOne *= -1;
+                        subOutput.storage.set(0,firstOne);
                         return subOutput;
 
                     } else if (num1 > num2){
@@ -205,6 +208,9 @@ public class myLongTwo {
                         }
                         myLongTwo subOutput = new myLongTwo(output);
                         //System.out.println(subOutput.toString());
+                        int firstOne = subOutput.storage.get(0);
+                        firstOne *= -1;
+                        subOutput.storage.set(0,firstOne);
                         return subOutput;
                     } else if (this.storage.equals(other.storage)){
                         myLongTwo subOutput = new myLongTwo("0");
@@ -231,6 +237,7 @@ public class myLongTwo {
                // System.out.println(TTwo);
                 myLongTwo temp = new myLongTwo(String.valueOf(TTwo));
                 pieces.add(temp);
+                System.out.println(temp);
             }
         }
 
