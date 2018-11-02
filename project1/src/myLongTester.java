@@ -10,7 +10,7 @@ public class myLongTester {
         myLongTwo numy = new myLongTwo(num);
         myLongTwo yent = new myLongTwo(yet);
 
-        System.out.println(numy.add(yent));
+        System.out.println("Adding: "+ numy.add(yent));
         //numy.multiply(yent);
         //numy.subtract(yent);
         //System.out.println(yent.getLong());

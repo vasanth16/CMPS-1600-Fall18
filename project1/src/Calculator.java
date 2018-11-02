@@ -214,137 +214,6 @@ public class Calculator extends JFrame implements ActionListener{
         }
     }
 
-    /*public void inputting1 (String s){
-        //Stack numbers = new Stack();
-        //Stack operations = new Stack();
-        //myLongTwo finalcal = new myLongTwo();
-        String op = "";
-        for (int i = 0; i < s.length(); i++){
-            if (s.charAt(i) == '('){
-                //System.out.println("yent");
-                for (int j = i; j<s.length(); j++){
-                    if (s.charAt(j) == ')'){
-                        op = s.substring(i+1, j);
-                    }
-                }
-
-                if (op.length() > 3) {
-                    if (op.contains("*")){
-                        for (int k = 0; k < op.length(); k++) {
-                            if (op.charAt(k) == '*'){
-                                String num = op.substring(0,k-1) + op.substring(k+1);
-                                StringBuilder yent = new StringBuilder(op);
-                                nums.add(num);
-                                ops.add("*");
-                                yent.delete(k-1,k+1);
-                                op = yent.toString();
-                            }
-                        }
-                    }
-                    if (op.contains("+") || op.contains("-")){
-                        for (int l = 0; l < op.length(); l++){
-                            //System.out.println(l);
-                            //System.out.println(op);
-                            if (op.charAt(l) == '+'){
-                                System.out.println("I hate this project so much");
-                                try{
-                                    System.out.println("I hate this project so much 2");
-                                    String num = op.charAt(l-1) +""+ op.charAt(l+1);
-                                    StringBuilder yent = new StringBuilder(op);
-                                    nums.add(num);
-                                    ops.add("+");
-                                    String numOne = op.substring(0,l);
-                                    String numTwo = op.substring(l+1, op.length()-1);
-                                    yent.deleteCharAt(l-1);
-                                    yent.deleteCharAt(l+1);
-                                    yent.deleteCharAt(l);
-                                    //System.out.println(num);
-                                    //System.out.println(yent.toString());
-                                    op = yent.toString();
-                                    System.out.println(op);
-                                } catch (Exception e){
-                                    try {
-                                        System.out.println("I hate this project so much3");
-                                        String num = op.charAt(l-1)+"";
-                                        StringBuilder yent = new StringBuilder();
-                                        nums.add(num);
-                                        ops.add("+");
-                                        //yent.delete(l-1,l);
-                                        yent.deleteCharAt(l-1);
-                                        yent.deleteCharAt(l);
-                                        op = yent.toString();
-                                    }catch (Exception f){
-                                        try{
-                                            String num = op.charAt(l+1)+"";
-                                            StringBuilder yent = new StringBuilder();
-                                            nums.add(num);
-                                            ops.add("+");
-                                            yent.deleteCharAt(l+1);
-                                            yent.deleteCharAt(l);
-                                            op = yent.toString();
-                                        }catch (Exception g){
-                                            System.out.println("Cant find");
-                                        }
-                                    }
-                                }
-                                l = 0;
-
-                            } else if (op.charAt(l) == '-'){
-                                try{
-                                    String numOne = op.substring(0,l);
-                                    String numTwo = op.substring(l+1, op.length()-1);
-                                    String num = numOne+numTwo;
-                                    StringBuilder yent = new StringBuilder(op);
-                                    nums.add(num);
-                                    ops.add("-");
-                                    yent.deleteCharAt(l-1);
-                                    yent.deleteCharAt(l+1);
-                                    yent.deleteCharAt(l);
-                                    op = yent.toString();
-                                } catch (Exception e){
-                                    try {
-                                        String num = op.charAt(l-1)+"";
-                                        StringBuilder yent = new StringBuilder();
-                                        nums.add(num);
-                                        ops.add("-");
-                                        yent.deleteCharAt(l-1);
-                                        yent.deleteCharAt(l);
-                                        op = yent.toString();
-                                    }catch (Exception f){
-                                        try{
-                                            String num = op.charAt(l+1)+"";
-                                            StringBuilder yent = new StringBuilder();
-                                            nums.add(num);
-                                            ops.add("-");
-                                            yent.deleteCharAt(l+1);
-                                            yent.deleteCharAt(l);
-                                            op = yent.toString();
-                                        }catch (Exception g){
-                                            System.out.println("Cant find");
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }else{
-                    for (i = 0; i<op.length(); i++ ){
-                        System.out.println("I hate this project so much 5");
-                        if (op.charAt(i) == '+' || op.charAt(i) == '-' ||op.charAt(i) == '*'){
-                            String numOne = op.charAt(0)+"";
-                            String numTwo = op.charAt(2)+"";
-                            String numbers = numOne+ "" + numTwo;
-                            System.out.println("Num 1: "+ numOne);
-                            System.out.println("Num 2:"+numTwo);
-                            nums.add(numbers);
-                            ops.add(op.charAt(i)+"");
-                        }
-                    }
-                }
-            }
-        }
-    }*/
-
     public void inserting (String s){
         StringBuilder builder = new StringBuilder(s);
         while (!s.isEmpty()) {
@@ -352,7 +221,7 @@ public class Calculator extends JFrame implements ActionListener{
                 int open = builder.indexOf("(");
                 int close = builder.indexOf(")");
                 String eq = builder.substring(open + 1, close);
-                builder.delete(open, close);
+                builder.delete(open, close+1);
                 s = builder.toString();
                 System.out.println(eq);
                 if (eq.contains("*")){
@@ -362,7 +231,7 @@ public class Calculator extends JFrame implements ActionListener{
                     int a = eq.indexOf("+");
                     int m = eq.indexOf("-");
 
-                    if ( a > m){
+                    if ( a < m){
                         eq = parseAdd(eq);
                     }else{
                         eq = parseSub(eq);
@@ -377,13 +246,15 @@ public class Calculator extends JFrame implements ActionListener{
                 if (s.contains("*")){
                     s = parseMulti(s);
                 }
-                if (s.contains("+") && s.contains("-")){
+                else if (s.contains("+") && s.contains("-")){
                     int a = s.indexOf("+");
                     int m = s.indexOf("-");
 
-                    if ( a > m){
+                    if ( a < m){
+
                         s = parseAdd(s);
                     }else{
+                        System.out.println("YENT");
                         s = parseSub(s);
                     }
                 } else if (s.contains("+")){
@@ -394,7 +265,6 @@ public class Calculator extends JFrame implements ActionListener{
             }
 
         }
-
         //parse(s);
     }
 
@@ -407,30 +277,42 @@ public class Calculator extends JFrame implements ActionListener{
                 int pluss = s.indexOf("+");
                 int minus = s.indexOf("-");
 
-                if (pluss > operator && minus > operator) {
-                    if (pluss > minus) {
+                if (pluss < operator && minus < operator) {
+                    if (pluss < minus) {
                         String numOne = s.substring(minus, operator);
                         String numTwo = s.substring(operator, s.length());
-                        temp.add(numOne);
-                        temp.add(numTwo);
+                        if (!numOne.equals("")) {
+                            temp.add(numOne);
+                        }
+                        if (!numTwo.equals("")) {
+                            temp.add(numTwo);
+                        }
                         StringBuilder ss = new StringBuilder(s);
                         ss = ss.delete(minus,s.length()-1);
                         s = ss.toString();
                     } else {
                         String numOne = s.substring(pluss, operator);
                         String numTwo = s.substring(operator, s.length());
-                        temp.add(numOne);
-                        temp.add(numTwo);
+                        if (!numOne.equals("")) {
+                            temp.add(numOne);
+                        }
+                        if (!numTwo.equals("")) {
+                            temp.add(numTwo);
+                        }
                         StringBuilder ss = new StringBuilder(s);
                         ss = ss.delete(pluss,s.length()-1);
                         s = ss.toString();
                     }
                     nums.add(temp);
-                }else if (pluss > operator){
+                }else if (pluss < operator){
                     String numOne = s.substring(pluss+1, operator);
                     String numTwo = s.substring(operator+1, minus);
-                    temp.add(numOne);
-                    temp.add(numTwo);
+                    if (!numOne.equals("")) {
+                        temp.add(numOne);
+                    }
+                    if (!numTwo.equals("")) {
+                        temp.add(numTwo);
+                    }
                     nums.add(temp);
                     StringBuilder ss = new StringBuilder(s);
                     ss = ss.delete(pluss+1,minus);
@@ -439,8 +321,12 @@ public class Calculator extends JFrame implements ActionListener{
                 else{
                     String numOne = s.substring(minus+1, operator);
                     String numTwo = s.substring(operator+1, pluss);
-                    temp.add(numOne);
-                    temp.add(numTwo);
+                    if (!numOne.equals("")) {
+                        temp.add(numOne);
+                    }
+                    if (!numTwo.equals("")) {
+                        temp.add(numTwo);
+                    }
                     nums.add(temp);
                     StringBuilder ss = new StringBuilder(s);
                     ss = ss.delete(minus+1,pluss);
@@ -450,11 +336,15 @@ public class Calculator extends JFrame implements ActionListener{
 
             } else if (s.contains("+")){
                 int pluss = s.indexOf("+");
-                if (pluss > operator){
+                if (pluss < operator){
                     String numOne = s.substring(pluss+1, operator);
                     String numTwo = s.substring(operator+1, s.length()-1);
-                    temp.add(numOne);
-                    temp.add(numTwo);
+                    if (!numOne.equals("")) {
+                        temp.add(numOne);
+                    }
+                    if (!numTwo.equals("")) {
+                        temp.add(numTwo);
+                    }
                     nums.add(temp);
                     StringBuilder ss = new StringBuilder(s);
                     ss = ss.delete(pluss+1,s.length()-1);
@@ -462,8 +352,12 @@ public class Calculator extends JFrame implements ActionListener{
                 } else{
                     String numOne = s.substring(0, operator);
                     String numTwo = s.substring(operator+1, pluss);
-                    boolean add = temp.add(numOne);
-                    temp.add(numTwo);
+                    if (!numOne.equals("")) {
+                        temp.add(numOne);
+                    }
+                    if (!numTwo.equals("")) {
+                        temp.add(numTwo);
+                    }
                     nums.add(temp);
                     StringBuilder ss = new StringBuilder(s);
                     ss = ss.delete(0,pluss);
@@ -471,11 +365,15 @@ public class Calculator extends JFrame implements ActionListener{
                 }
             } else if (s.contains("-")){
                 int minus = s.indexOf("-");
-                if (minus > operator){
+                if (minus < operator){
                     String numOne = s.substring(minus+1, operator);
                     String numTwo = s.substring(operator+1, s.length()-1);
-                    temp.add(numOne);
-                    temp.add(numTwo);
+                    if (!numOne.equals("")) {
+                        temp.add(numOne);
+                    }
+                    if (!numTwo.equals("")) {
+                        temp.add(numTwo);
+                    }
                     nums.add(temp);
                     StringBuilder ss = new StringBuilder(s);
                     ss = ss.delete(minus+1,s.length()-1);
@@ -483,8 +381,12 @@ public class Calculator extends JFrame implements ActionListener{
                 } else{
                     String numOne = s.substring(0, operator);
                     String numTwo = s.substring(operator+1, minus);
-                    temp.add(numOne);
-                    temp.add(numTwo);
+                    if (!numOne.equals("")) {
+                        temp.add(numOne);
+                    }
+                    if (!numTwo.equals("")) {
+                        temp.add(numTwo);
+                    }
                     nums.add(temp);
                     StringBuilder ss = new StringBuilder(s);
                     ss = ss.delete(0,minus);
@@ -513,7 +415,7 @@ public class Calculator extends JFrame implements ActionListener{
         int x = pluss;
         int y = pluss;
         if (s.length() > 2) {
-            for (int i = pluss + 1; i < s.length() - 1; i++) {
+            for (int i = pluss + 1; i < s.length(); i++) {
                 if (s.charAt(i) == '+' || s.charAt(i) == '-') {
                     break;
                 }
@@ -527,10 +429,10 @@ public class Calculator extends JFrame implements ActionListener{
             }
 
             String num1 = s.substring(y, pluss);
-            String num2 = s.substring(pluss +1, x+1);
+            String num2 = s.substring(pluss+1, x+1);
 
-            System.out.println("1: "+num1);
-            System.out.println("2: "+num2);
+            //System.out.println("1: "+num1);
+            //System.out.println("2: "+num2);
 
             ops.add("+");
 
@@ -544,7 +446,7 @@ public class Calculator extends JFrame implements ActionListener{
             s = ss.toString();
 
             return s;
-        } else{
+        } else if (s.length() == 2){
             if (pluss == 0){
                 String num1 = s.charAt(1)+"";
                 temp.add(num1);
@@ -559,6 +461,10 @@ public class Calculator extends JFrame implements ActionListener{
                 s = "";
             }
             return s;
+        } else{
+            //ops.add("+");
+            s = "";
+            return s;
         }
     }
 
@@ -567,8 +473,10 @@ public class Calculator extends JFrame implements ActionListener{
         int minus = s.indexOf("-");
         int x = minus;
         int y = minus;
+        //System.out.println("This is the string that goes in parsesubtract: " + s);
         if (s.length()>2){
-            for (int i = minus + 1; i < s.length() - 1; i++) {
+            //System.out.println("Enters the 2 number subtract");
+            for (int i = minus + 1; i < s.length(); i++) {
                 if (s.charAt(i) == '+' || s.charAt(i) == '-') {
                     break;
                 }
@@ -582,13 +490,24 @@ public class Calculator extends JFrame implements ActionListener{
             }
 
             String num1 = s.substring(y, minus);
-            String num2 = s.substring(minus + 1, x);
+            String num2 = s.substring(minus + 1, x+1);
 
             ops.add("-");
+            if (!num1.equals("")) {
+                temp.add(num1);
+            }
+            if (!num2.equals("")) {
+                temp.add(num2);
+            }
 
-            temp.add(num1);
-            temp.add(num2);
+            if(y < minus && x == minus){
+                String al = temp.get(0);
+                Integer w = Integer.parseInt(al) * -1;
+                //System.out.println(w);
+                al = w.toString();
+                temp.set(0,al);
 
+            }
             nums.add(temp);
 
             StringBuilder ss = new StringBuilder(s);
@@ -597,6 +516,7 @@ public class Calculator extends JFrame implements ActionListener{
 
             return s;
         }else{
+
             if (minus == 0){
                 String num1 = s.charAt(1)+"";
                 temp.add(num1);
@@ -605,6 +525,9 @@ public class Calculator extends JFrame implements ActionListener{
                 s = "";
             }else{
                 String num1 = s.charAt(0)+"";
+                Integer w = Integer.parseInt(num1) * -1;
+                System.out.println(w);
+                num1 = w.toString();
                 temp.add(num1);
                 ops.add("-");
                 nums.add(temp);
@@ -619,7 +542,9 @@ public class Calculator extends JFrame implements ActionListener{
         while(!nums.isEmpty() && !ops.isEmpty()){
             ArrayList<String> currNums = nums.poll();
             String currOp = ops.poll();
-           // System.out.println(currNums);
+            System.out.println(currNums);
+            System.out.println(currOp);
+            finalsum.isNegative();
 
             if (currOp.equals("*")){
                 if (currNums.size() > 1){
@@ -634,10 +559,10 @@ public class Calculator extends JFrame implements ActionListener{
                     myLongTwo aa = new myLongTwo(currNums.get(0));
                     finalsum = finalsum.multiply(aa);
                 }
-            } /*else if (currOp.equals("+")){
-                if (currNums.length() > 1){
-                    String a = currNums.charAt(0)+"";
-                    String b = currNums.charAt(1)+"";
+            } else if (currOp.equals("+")){
+                if (currNums.size() > 1){
+                    String a = currNums.get(0);
+                    String b = currNums.get(1);
 
                     myLongTwo aa = new myLongTwo(a);
                     myLongTwo bb = new myLongTwo(b);
@@ -645,91 +570,39 @@ public class Calculator extends JFrame implements ActionListener{
                     finalsum = finalsum.add(aa.add(bb));
                     //System.out.println(aa.add(bb).toString());
                 }else {
-                    System.out.println("allai");
-                    myLongTwo aa = new myLongTwo(currNums);
-
+                    //System.out.println("allai");
+                    finalsum.isNegative();
+                    finalsum.getRidOfNegSign();
+                    myLongTwo aa = new myLongTwo(currNums.get(0));
+                    System.out.println(aa.isNeg);
+                    System.out.println("Final sum: " +finalsum.toString());
+                    System.out.println("aa: "+ aa.toString());
                     finalsum = finalsum.add(aa);
                 }
 
             } else if (currOp.equals("-")){
-                if (currNums.length() > 1){
-                    String a = currNums.charAt(0)+"";
-                    String b = currNums.charAt(1)+"";
+                if (currNums.size() > 1){
+                    String a = currNums.get(0);
+                    String b = currNums.get(1);
 
                     myLongTwo aa = new myLongTwo(a);
                     myLongTwo bb = new myLongTwo(b);
 
                     finalsum = finalsum.add(aa.subtract(bb));
                 }else {
-                    myLongTwo aa = new myLongTwo(currNums);
-                    finalsum = finalsum.subtract(aa);
+                    myLongTwo aa = new myLongTwo(currNums.get(0));
+                    aa.isNegative();
+                    if (aa.isNeg) {
+                        finalsum = aa.subtract(finalsum);
+                    }else {
+                        finalsum = finalsum.subtract(aa);
+                    }
                 }
 
-            }*/
+            }
+            System.out.println(finalsum.toString());
         }
         return finalsum;
-    }
-
-    public myLongTwo calcs (String s){
-        Stack <String> order = new Stack ();
-        String others = "";
-        myLongTwo finalCal = new myLongTwo();
-
-        for (int i =0; i < s.length() ; i++){
-            if (s.charAt(i) == '('){
-                for (int j = i+1; j < s.length(); j++){
-                    if (s.charAt(j) == ')'){
-                        String op = s.substring(i+1, j);
-                        order.push(op);
-                        break;
-                        //System.out.println(op);
-                    }
-                }
-            }
-            else{
-                others += s.charAt(i);
-                try {
-                    if (s.charAt(i + 1) == '(') {
-                        order.push(others);
-                        others = "";
-                    }
-                } catch (Exception string){
-                    System.out.println(others + ":OThers");
-                    order.push(others);
-                    others = "";
-                }
-            }
-        }
-
-        while (!order.isEmpty()){
-            String curr = order.pop();
-            System.out.println("This is curr:" + curr);
-            if (curr.contains("+")){
-                for (int i = 0; i < curr.length(); i++){
-                    if (curr.charAt(i) == '+'){
-                        //System.out.println(curr);
-                        //Character numOne = curr.charAt(i-1);
-                        //String numA = numOne.toString();
-                        String numA = curr.substring(0,i);
-                        System.out.println("Num A:" +numA);
-
-                        Character numTwo = curr.charAt(i-1);
-                        //String numB = numTwo.toString();
-                        String numB = curr.substring(i+1, curr.length()-1);
-                        System.out.println("Num B: "+numB);
-
-                        myLongTwo A = new myLongTwo(numA);
-                        myLongTwo B = new myLongTwo(numB);
-
-                        finalCal = finalCal.add(A.add(B));
-                        break;
-
-                    }
-                }
-            }
-        }
-
-        return finalCal;
     }
 
     /**
@@ -741,7 +614,7 @@ public class Calculator extends JFrame implements ActionListener{
         Stack check = new Stack();
         inserting(sum);
 
-        try {
+        //try {
             for (int i = 0; i < s.length(); i++) {
 
                 if (s.charAt(i) == '(') {
@@ -755,18 +628,19 @@ public class Calculator extends JFrame implements ActionListener{
             }
 
 
+
             if (check.isEmpty()) {
-                System.out.println(nums.peek());
-                System.out.println(ops.peek());
+                //System.out.println(nums.peek());
+                //System.out.println(ops.peek());
                 //System.out.println(calcs(sum).toString());
                 display.setText(calculating().toString());
             } else {
                 display.setText("Input is invalid");
             }
-        } catch(Exception stackEmpty){
-            display.setText("yuhh");
-            return false;
-        }
+        //} catch(Exception stackEmpty){
+           // display.setText("yuhh");
+            //return false;
+        //}
 
         try{
             for (int j = 0; j < s.length(); j++){

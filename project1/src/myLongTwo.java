@@ -7,7 +7,7 @@ public class myLongTwo {
     private String printing;
     private int counter = 0;
     private Long converted;
-    private boolean isNeg;
+    public boolean isNeg;
 
     public void setLong (String num){
         //storage = new int[num.length()+1];
@@ -44,10 +44,12 @@ public class myLongTwo {
         if (this.isNeg){
             int temp = this.storage.get(0);
             temp *= -1;
-            return this.subtract(other);
+            //this.storage.set(0,temp);
+            return other.subtract(this);
         } else if (other.isNeg){
             int temp = other.storage.get(0);
-            return other.subtract(this);
+            temp += -1;
+            return this.subtract(other);
         }
 
         // If this array is a longer number then the number passed in
@@ -168,7 +170,7 @@ public class myLongTwo {
 
                             this.storage.add(0,0);
                         }
-                        System.out.println(this);
+                        //System.out.println(this);
                         for (int y = other.storage.size()-1; y >= 0; y-- ) {
                             num1 = this.storage.get(y);
                             num2 = other.storage.get(y);
@@ -209,7 +211,7 @@ public class myLongTwo {
                         myLongTwo subOutput = new myLongTwo(output);
                         //System.out.println(subOutput.toString());
                         int firstOne = subOutput.storage.get(0);
-                        firstOne *= -1;
+                        //firstOne *= -1;
                         subOutput.storage.set(0,firstOne);
                         return subOutput;
                     } else if (this.storage.equals(other.storage)){
@@ -278,6 +280,22 @@ public class myLongTwo {
 
         System.out.println(finalAnswer);
         return finalAnswer;
+    }
+
+    public void isNegative (){
+        int temp = this.storage.get(0);
+        if (temp < 0) {
+            this.isNeg = true;
+        }
+    }
+    public void getRidOfNegSign(){
+        if(this.isNeg){
+            if(this.storage.get(0) < 0){
+                int temp = this.storage.get(0);
+                temp = temp * -1;
+                this.storage.set(0,temp);
+            }
+        }
     }
 
     @Override
