@@ -31,8 +31,8 @@ public class Calculator extends JFrame implements ActionListener{
 
     private JTextField display = new JTextField(8);
 
-    Queue <String> nums = new LinkedList<String>();
-    Queue<String> ops = new LinkedList<String>();
+    private Queue <ArrayList<String>> nums = new LinkedList<>();
+    private Queue<String> ops = new LinkedList<String>();
 
 
     /**
@@ -214,7 +214,7 @@ public class Calculator extends JFrame implements ActionListener{
         }
     }
 
-    public void inputting (String s){
+    /*public void inputting1 (String s){
         //Stack numbers = new Stack();
         //Stack operations = new Stack();
         //myLongTwo finalcal = new myLongTwo();
@@ -243,7 +243,7 @@ public class Calculator extends JFrame implements ActionListener{
                     }
                     if (op.contains("+") || op.contains("-")){
                         for (int l = 0; l < op.length(); l++){
-                            System.out.println(l);
+                            //System.out.println(l);
                             //System.out.println(op);
                             if (op.charAt(l) == '+'){
                                 System.out.println("I hate this project so much");
@@ -291,7 +291,9 @@ public class Calculator extends JFrame implements ActionListener{
 
                             } else if (op.charAt(l) == '-'){
                                 try{
-                                    String num = op.charAt(l-1) +""+ op.charAt(l+1);
+                                    String numOne = op.substring(0,l);
+                                    String numTwo = op.substring(l+1, op.length()-1);
+                                    String num = numOne+numTwo;
                                     StringBuilder yent = new StringBuilder(op);
                                     nums.add(num);
                                     ops.add("-");
@@ -341,29 +343,298 @@ public class Calculator extends JFrame implements ActionListener{
                 }
             }
         }
+    }*/
+
+    public void inserting (String s){
+        StringBuilder builder = new StringBuilder(s);
+        while (!s.isEmpty()) {
+            if (s.contains("(")) {
+                int open = builder.indexOf("(");
+                int close = builder.indexOf(")");
+                String eq = builder.substring(open + 1, close);
+                builder.delete(open, close);
+                s = builder.toString();
+                System.out.println(eq);
+                if (eq.contains("*")){
+                    eq = parseMulti(eq);
+                }
+                if (eq.contains("+") && eq.contains("-")){
+                    int a = eq.indexOf("+");
+                    int m = eq.indexOf("-");
+
+                    if ( a > m){
+                        eq = parseAdd(eq);
+                    }else{
+                        eq = parseSub(eq);
+                    }
+                } else if (eq.contains("+")){
+                    eq = parseAdd(eq);
+                } else if (eq.contains("-")){
+                    eq = parseSub(eq);
+                }
+
+            } else{
+                if (s.contains("*")){
+                    s = parseMulti(s);
+                }
+                if (s.contains("+") && s.contains("-")){
+                    int a = s.indexOf("+");
+                    int m = s.indexOf("-");
+
+                    if ( a > m){
+                        s = parseAdd(s);
+                    }else{
+                        s = parseSub(s);
+                    }
+                } else if (s.contains("+")){
+                    s = parseAdd(s);
+                } else if (s.contains("-")){
+                    s = parseSub(s);
+                }
+            }
+
+        }
+
+        //parse(s);
+    }
+
+    public String parseMulti (String s){
+        if (s.contains("*")){
+            int operator = s.indexOf("*");
+            ArrayList<String> temp = new ArrayList<String>();
+            ops.add("*");
+            if (s.contains("+") && s.contains("-")) {
+                int pluss = s.indexOf("+");
+                int minus = s.indexOf("-");
+
+                if (pluss > operator && minus > operator) {
+                    if (pluss > minus) {
+                        String numOne = s.substring(minus, operator);
+                        String numTwo = s.substring(operator, s.length());
+                        temp.add(numOne);
+                        temp.add(numTwo);
+                        StringBuilder ss = new StringBuilder(s);
+                        ss = ss.delete(minus,s.length()-1);
+                        s = ss.toString();
+                    } else {
+                        String numOne = s.substring(pluss, operator);
+                        String numTwo = s.substring(operator, s.length());
+                        temp.add(numOne);
+                        temp.add(numTwo);
+                        StringBuilder ss = new StringBuilder(s);
+                        ss = ss.delete(pluss,s.length()-1);
+                        s = ss.toString();
+                    }
+                    nums.add(temp);
+                }else if (pluss > operator){
+                    String numOne = s.substring(pluss+1, operator);
+                    String numTwo = s.substring(operator+1, minus);
+                    temp.add(numOne);
+                    temp.add(numTwo);
+                    nums.add(temp);
+                    StringBuilder ss = new StringBuilder(s);
+                    ss = ss.delete(pluss+1,minus);
+                    s = ss.toString();
+                }
+                else{
+                    String numOne = s.substring(minus+1, operator);
+                    String numTwo = s.substring(operator+1, pluss);
+                    temp.add(numOne);
+                    temp.add(numTwo);
+                    nums.add(temp);
+                    StringBuilder ss = new StringBuilder(s);
+                    ss = ss.delete(minus+1,pluss);
+                    s = ss.toString();
+                }
+            
+
+            } else if (s.contains("+")){
+                int pluss = s.indexOf("+");
+                if (pluss > operator){
+                    String numOne = s.substring(pluss+1, operator);
+                    String numTwo = s.substring(operator+1, s.length()-1);
+                    temp.add(numOne);
+                    temp.add(numTwo);
+                    nums.add(temp);
+                    StringBuilder ss = new StringBuilder(s);
+                    ss = ss.delete(pluss+1,s.length()-1);
+                    s = ss.toString();
+                } else{
+                    String numOne = s.substring(0, operator);
+                    String numTwo = s.substring(operator+1, pluss);
+                    boolean add = temp.add(numOne);
+                    temp.add(numTwo);
+                    nums.add(temp);
+                    StringBuilder ss = new StringBuilder(s);
+                    ss = ss.delete(0,pluss);
+                    s = ss.toString();
+                }
+            } else if (s.contains("-")){
+                int minus = s.indexOf("-");
+                if (minus > operator){
+                    String numOne = s.substring(minus+1, operator);
+                    String numTwo = s.substring(operator+1, s.length()-1);
+                    temp.add(numOne);
+                    temp.add(numTwo);
+                    nums.add(temp);
+                    StringBuilder ss = new StringBuilder(s);
+                    ss = ss.delete(minus+1,s.length()-1);
+                    s = ss.toString();
+                } else{
+                    String numOne = s.substring(0, operator);
+                    String numTwo = s.substring(operator+1, minus);
+                    temp.add(numOne);
+                    temp.add(numTwo);
+                    nums.add(temp);
+                    StringBuilder ss = new StringBuilder(s);
+                    ss = ss.delete(0,minus);
+                    s = ss.toString();
+                }
+            } else {
+                System.out.println("Yent");
+                String num1 = s.substring(0,operator);
+                String num2 = s.substring(operator+1, s.length());
+                temp.add(num1);
+                temp.add(num2);
+                nums.add(temp);
+                s = "";
+                //StringBuilder ss = new StringBuilder(s);
+                //ss = ss.delete(0,s.length()-1);
+               // s = ss.toString();
+
+            }
+        }
+        return s;
+    }
+
+    public String parseAdd (String s){
+        ArrayList <String> temp = new ArrayList<>();
+        int pluss = s.indexOf("+");
+        int x = pluss;
+        int y = pluss;
+        if (s.length() > 2) {
+            for (int i = pluss + 1; i < s.length() - 1; i++) {
+                if (s.charAt(i) == '+' || s.charAt(i) == '-') {
+                    break;
+                }
+                x += 1;
+            }
+            for (int j = pluss - 1; j >= 0; j--) {
+                if (s.charAt(j) == '+' || s.charAt(j) == '-') {
+                    break;
+                }
+                y -= 1;
+            }
+
+            String num1 = s.substring(y, pluss);
+            String num2 = s.substring(pluss +1, x+1);
+
+            System.out.println("1: "+num1);
+            System.out.println("2: "+num2);
+
+            ops.add("+");
+
+            temp.add(num1);
+            temp.add(num2);
+
+            nums.add(temp);
+
+            StringBuilder ss = new StringBuilder(s);
+            ss = ss.delete(y, x + 1);
+            s = ss.toString();
+
+            return s;
+        } else{
+            if (pluss == 0){
+                String num1 = s.charAt(1)+"";
+                temp.add(num1);
+                ops.add("+");
+                nums.add(temp);
+                s = "";
+            }else{
+                String num1 = s.charAt(0)+"";
+                temp.add(num1);
+                ops.add("+");
+                nums.add(temp);
+                s = "";
+            }
+            return s;
+        }
+    }
+
+    public String parseSub (String s){
+        ArrayList <String> temp = new ArrayList<>();
+        int minus = s.indexOf("-");
+        int x = minus;
+        int y = minus;
+        if (s.length()>2){
+            for (int i = minus + 1; i < s.length() - 1; i++) {
+                if (s.charAt(i) == '+' || s.charAt(i) == '-') {
+                    break;
+                }
+                x += 1;
+            }
+            for (int j = minus - 1; j >= 0; j--) {
+                if (s.charAt(j) == '+' || s.charAt(j) == '-') {
+                    break;
+                }
+                y -= 1;
+            }
+
+            String num1 = s.substring(y, minus);
+            String num2 = s.substring(minus + 1, x);
+
+            ops.add("-");
+
+            temp.add(num1);
+            temp.add(num2);
+
+            nums.add(temp);
+
+            StringBuilder ss = new StringBuilder(s);
+            ss = ss.delete(y, x + 1);
+            s = ss.toString();
+
+            return s;
+        }else{
+            if (minus == 0){
+                String num1 = s.charAt(1)+"";
+                temp.add(num1);
+                ops.add("-");
+                nums.add(temp);
+                s = "";
+            }else{
+                String num1 = s.charAt(0)+"";
+                temp.add(num1);
+                ops.add("-");
+                nums.add(temp);
+                s = "";
+            }
+            return s;
+        }
     }
 
     public myLongTwo calculating (){
         myLongTwo finalsum = new myLongTwo("0");
         while(!nums.isEmpty() && !ops.isEmpty()){
-            String currNums = nums.poll();
+            ArrayList<String> currNums = nums.poll();
             String currOp = ops.poll();
            // System.out.println(currNums);
 
             if (currOp.equals("*")){
-                if (currNums.length() > 1){
-                    String a = currNums.charAt(0)+"";
-                    String b = currNums.charAt(1)+"";
+                if (currNums.size() > 1){
+                    String a = currNums.get(0);
+                    String b = currNums.get(1);
 
                     myLongTwo aa = new myLongTwo(a);
                     myLongTwo bb = new myLongTwo(b);
 
                     finalsum = finalsum.add(aa.multiply(bb));
                 }else {
-                    myLongTwo aa = new myLongTwo(currNums);
+                    myLongTwo aa = new myLongTwo(currNums.get(0));
                     finalsum = finalsum.multiply(aa);
                 }
-            } else if (currOp.equals("+")){
+            } /*else if (currOp.equals("+")){
                 if (currNums.length() > 1){
                     String a = currNums.charAt(0)+"";
                     String b = currNums.charAt(1)+"";
@@ -394,7 +665,7 @@ public class Calculator extends JFrame implements ActionListener{
                     finalsum = finalsum.subtract(aa);
                 }
 
-            }
+            }*/
         }
         return finalsum;
     }
@@ -468,7 +739,7 @@ public class Calculator extends JFrame implements ActionListener{
      */
     public boolean isValidInput(String s){
         Stack check = new Stack();
-        inputting(sum);
+        inserting(sum);
 
         try {
             for (int i = 0; i < s.length(); i++) {
@@ -485,8 +756,8 @@ public class Calculator extends JFrame implements ActionListener{
 
 
             if (check.isEmpty()) {
-                //System.out.println(nums.peek());
-                //System.out.println(ops.peek());
+                System.out.println(nums.peek());
+                System.out.println(ops.peek());
                 //System.out.println(calcs(sum).toString());
                 display.setText(calculating().toString());
             } else {
