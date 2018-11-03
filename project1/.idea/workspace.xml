@@ -3,12 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="db851fcc-57ac-479b-b314-20a944f64552" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/project1/Calculator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project1/Calculator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/project1/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project1/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/project1/myLongTwo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/project1/myLongTwo.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Calculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Calculator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/myLongTester.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/myLongTester.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/myLongTwo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/myLongTwo.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -42,13 +37,14 @@
     <session id="-1847949314">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="4" />
+          <entry key="project.closed" value="5" />
           <entry key="project.open.time.12" value="1" />
+          <entry key="project.open.time.13" value="1" />
           <entry key="project.open.time.15" value="1" />
           <entry key="project.open.time.5" value="1" />
           <entry key="project.open.time.7" value="1" />
           <entry key="project.open.time.8" value="1" />
-          <entry key="project.opened" value="5" />
+          <entry key="project.opened" value="6" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -63,12 +59,12 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="14636" />
+          <entry key="java" value="15102" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="14636" />
+          <entry key="JAVA" value="15102" />
         </counts>
       </usages-collector>
     </session>
@@ -78,10 +74,9 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Calculator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="464" column="14" selection-start-line="464" selection-start-column="14" selection-end-line="464" selection-end-column="14" />
+            <state relative-caret-position="945">
+              <caret line="563" column="68" selection-start-line="563" selection-start-column="68" selection-end-line="563" selection-end-column="68" />
               <folding>
-                <element signature="e#1245#1253#0" expanded="true" />
                 <element signature="docComment;method#Calculator#0;class#Calculator#0" />
                 <element signature="method#Calculator#0;class#Calculator#0" />
                 <element signature="docComment;method#setUpUI#0;class#Calculator#0" />
@@ -89,9 +84,8 @@
                 <element signature="method#actionPerformed#0;class#Calculator#0" />
                 <element signature="method#inserting#0;class#Calculator#0" />
                 <element signature="method#parseMulti#0;class#Calculator#0" />
-                <element signature="e#14057#14065#0" expanded="true" />
+                <element signature="method#parseAdd#0;class#Calculator#0" />
                 <element signature="method#parseSub#0;class#Calculator#0" />
-                <element signature="docComment;method#isValidInput#0;class#Calculator#0" />
                 <element signature="method#isValidInput#0;class#Calculator#0" />
                 <element signature="docComment;class#Main#0" />
                 <element signature="class#Main#0" />
@@ -103,7 +97,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/myLongTwo.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="337">
+            <state relative-caret-position="465">
               <caret line="295" column="41" selection-start-line="295" selection-start-column="41" selection-end-line="295" selection-end-column="41" />
               <folding>
                 <element signature="method#setLong#0;class#myLongTwo#0" />
@@ -111,10 +105,6 @@
                 <element signature="method#add#0;class#myLongTwo#0" />
                 <element signature="method#subtract#0;class#myLongTwo#0" />
                 <element signature="method#multiply#0;class#myLongTwo#0" />
-                <element signature="e#10854#10855#0" expanded="true" />
-                <element signature="e#10891#10892#0" expanded="true" />
-                <element signature="e#11270#11271#0" expanded="true" />
-                <element signature="e#11303#11304#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -160,7 +150,7 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="601" />
+    <option name="x" value="347" />
     <option name="y" value="23" />
     <option name="width" value="1079" />
     <option name="height" value="986" />
@@ -171,7 +161,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -188,14 +177,15 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1541142182434" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1541142184771" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Project" />
@@ -255,15 +245,16 @@
       <workItem from="1539568844832" duration="7646000" />
       <workItem from="1540345767601" duration="38130000" />
       <workItem from="1540859052855" duration="2603000" />
-      <workItem from="1540955330766" duration="51013000" />
+      <workItem from="1540955330766" duration="51188000" />
+      <workItem from="1541219576592" duration="251000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="108450000" />
+    <option name="totallyTimeSpent" value="108876000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="601" y="23" width="1079" height="986" extended-state="0" />
+    <frame x="347" y="23" width="1079" height="986" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49906892" visible="true" weight="0.0" />
@@ -275,18 +266,17 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32997763" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49964413" visible="true" weight="0.1756152" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49964413" weight="0.1756152" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39932886" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.32997763" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" order="9" weight="0.21140939" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5003559" side_tool="true" weight="0.36240786" />
       <window_info anchor="bottom" id="Messages" order="11" weight="0.3277405" />
       <window_info anchor="bottom" id="Inspection Results" order="12" weight="0.32923833" />
-      <window_info anchor="right" id="Coverage" side_tool="true" weight="0.3298969" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.2492971" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -296,6 +286,7 @@
       <window_info anchor="right" id="Theme Preview" order="6" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="right" id="Maven Projects" order="8" />
+      <window_info anchor="right" id="Coverage" order="9" side_tool="true" weight="0.3298969" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -330,37 +321,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/myLongTester.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="8" selection-start-line="12" selection-start-column="8" selection-end-line="12" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/myLongTwo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="337">
-          <caret line="295" column="41" selection-start-line="295" selection-start-column="41" selection-end-line="295" selection-end-column="41" />
-          <folding>
-            <element signature="method#setLong#0;class#myLongTwo#0" />
-            <element signature="method#getLong#0;class#myLongTwo#0" />
-            <element signature="method#add#0;class#myLongTwo#0" />
-            <element signature="method#subtract#0;class#myLongTwo#0" />
-            <element signature="method#multiply#0;class#myLongTwo#0" />
-            <element signature="e#10854#10855#0" expanded="true" />
-            <element signature="e#10891#10892#0" expanded="true" />
-            <element signature="e#11270#11271#0" expanded="true" />
-            <element signature="e#11303#11304#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Calculator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="464" column="14" selection-start-line="464" selection-start-column="14" selection-end-line="464" selection-end-column="14" />
+        <state relative-caret-position="945">
+          <caret line="563" column="68" selection-start-line="563" selection-start-column="68" selection-end-line="563" selection-end-column="68" />
           <folding>
-            <element signature="e#1245#1253#0" expanded="true" />
             <element signature="docComment;method#Calculator#0;class#Calculator#0" />
             <element signature="method#Calculator#0;class#Calculator#0" />
             <element signature="docComment;method#setUpUI#0;class#Calculator#0" />
@@ -368,13 +333,33 @@
             <element signature="method#actionPerformed#0;class#Calculator#0" />
             <element signature="method#inserting#0;class#Calculator#0" />
             <element signature="method#parseMulti#0;class#Calculator#0" />
-            <element signature="e#14057#14065#0" expanded="true" />
+            <element signature="method#parseAdd#0;class#Calculator#0" />
             <element signature="method#parseSub#0;class#Calculator#0" />
-            <element signature="docComment;method#isValidInput#0;class#Calculator#0" />
             <element signature="method#isValidInput#0;class#Calculator#0" />
             <element signature="docComment;class#Main#0" />
             <element signature="class#Main#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/myLongTwo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="295" column="41" selection-start-line="295" selection-start-column="41" selection-end-line="295" selection-end-column="41" />
+          <folding>
+            <element signature="method#setLong#0;class#myLongTwo#0" />
+            <element signature="method#getLong#0;class#myLongTwo#0" />
+            <element signature="method#add#0;class#myLongTwo#0" />
+            <element signature="method#subtract#0;class#myLongTwo#0" />
+            <element signature="method#multiply#0;class#myLongTwo#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/myLongTester.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="8" selection-start-line="12" selection-start-column="8" selection-end-line="12" selection-end-column="8" />
         </state>
       </provider>
     </entry>

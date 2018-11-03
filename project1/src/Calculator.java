@@ -8,6 +8,8 @@ import java.awt.event.ActionListener;
  * @Author: Vasanth Rajasekaran
  */
 public class Calculator extends JFrame implements ActionListener{
+
+    // All the global variables needed
     private String sum = "";
     private JButton plus = new JButton("+");
     private JButton minus =  new JButton("-");
@@ -214,6 +216,11 @@ public class Calculator extends JFrame implements ActionListener{
         }
     }
 
+    /**
+     * This method calls parsing methods to parse the equation that is inputted into the calculator
+     * @param s is the equation
+     */
+
     public void inserting (String s){
         StringBuilder builder = new StringBuilder(s);
         while (!s.isEmpty()) {
@@ -268,6 +275,11 @@ public class Calculator extends JFrame implements ActionListener{
         //parse(s);
     }
 
+    /**
+     * Parses equations with multiplication
+     * @param s Equation
+     * @return a string that is then called to parse again
+     */
     public String parseMulti (String s){
         if (s.contains("*")){
             int operator = s.indexOf("*");
@@ -409,6 +421,11 @@ public class Calculator extends JFrame implements ActionListener{
         return s;
     }
 
+    /**
+     * Parses equations with add
+     * @param s equation
+     * @return a string that is then called to parse again if not empty
+     */
     public String parseAdd (String s){
         ArrayList <String> temp = new ArrayList<>();
         int pluss = s.indexOf("+");
@@ -468,6 +485,11 @@ public class Calculator extends JFrame implements ActionListener{
         }
     }
 
+    /**
+     * Parses equations with subtract
+     * @param s equation
+     * @return a string that is then called to parse again
+     */
     public String parseSub (String s){
         ArrayList <String> temp = new ArrayList<>();
         int minus = s.indexOf("-");
@@ -536,6 +558,11 @@ public class Calculator extends JFrame implements ActionListener{
             return s;
         }
     }
+
+    /**
+     * Calls the mylong methods to actually do the math
+     * @return returns a mylong that is used to output to the screen
+     */
 
     public myLongTwo calculating (){
         myLongTwo finalsum = new myLongTwo("0");
