@@ -37,7 +37,7 @@
     <session id="-1847949314">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="5" />
+          <entry key="project.closed" value="6" />
           <entry key="project.open.time.12" value="1" />
           <entry key="project.open.time.13" value="1" />
           <entry key="project.open.time.15" value="1" />
@@ -246,16 +246,15 @@
       <workItem from="1540345767601" duration="38130000" />
       <workItem from="1540859052855" duration="2603000" />
       <workItem from="1540955330766" duration="51188000" />
-      <workItem from="1541219576592" duration="251000" />
+      <workItem from="1541219576592" duration="274000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="108876000" />
+    <option name="totallyTimeSpent" value="108899000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="347" y="23" width="1079" height="986" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49906892" visible="true" weight="0.0" />
       <window_info id="Structure" order="1" sideWeight="0.5009311" side_tool="true" weight="0.12148962" />
@@ -273,7 +272,7 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32997763" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="9" weight="0.21140939" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.21140939" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5003559" side_tool="true" weight="0.36240786" />
       <window_info anchor="bottom" id="Messages" order="11" weight="0.3277405" />
       <window_info anchor="bottom" id="Inspection Results" order="12" weight="0.32923833" />
