@@ -78,7 +78,19 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/Users/vasanthrajasekaran/Documents/Sophomore Year/CMPS 1600/Lab 6/main.c">
+		<Unit filename="/Users/vasanthrajasekaran/Documents/Sophomore Year/CMPS 1600/Lab 6/LinkedS.c">
+			<Option target="Lab_6"/>
+		</Unit>
+		<Unit filename="/Users/vasanthrajasekaran/Documents/Sophomore Year/CMPS 1600/Lab 6/asscessingM.c">
+			<Option target="Lab_6"/>
+		</Unit>
+		<Unit filename="/Users/vasanthrajasekaran/Documents/Sophomore Year/CMPS 1600/Lab 6/guessingGameBasic.c">
+			<Option target="Lab_6"/>
+		</Unit>
+		<Unit filename="/Users/vasanthrajasekaran/Documents/Sophomore Year/CMPS 1600/Lab 6/guessingGameRandom.c">
+			<Option target="Lab_6"/>
+		</Unit>
+		<Unit filename="/Users/vasanthrajasekaran/Documents/Sophomore Year/CMPS 1600/Lab 6/swapProblem.c">
 			<Option target="Lab_6"/>
 		</Unit>
 		<Unit filename="/Users/vasanthrajasekaran/Documents/Sophomore Year/CMPS 1600/Lab 6/CMakeLists.txt">

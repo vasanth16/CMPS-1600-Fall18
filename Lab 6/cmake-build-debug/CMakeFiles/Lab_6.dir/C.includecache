@@ -6,7 +6,43 @@
 
 #IncludeRegexTransform: 
 
-/Users/vasanthrajasekaran/Documents/Sophomore Year/CMPS 1600/Lab 6/main.c
+/Users/vasanthrajasekaran/Documents/Sophomore Year/CMPS 1600/Lab 6/LinkedS.c
+stdio.h
+-
+stdbool.h
+-
+stdlib.h
+-
+
+/Users/vasanthrajasekaran/Documents/Sophomore Year/CMPS 1600/Lab 6/asscessingM.c
+stdio.h
+-
+stdbool.h
+-
+stdlib.h
+-
+math.h
+-
+
+/Users/vasanthrajasekaran/Documents/Sophomore Year/CMPS 1600/Lab 6/guessingGameBasic.c
+stdio.h
+-
+stdbool.h
+-
+
+/Users/vasanthrajasekaran/Documents/Sophomore Year/CMPS 1600/Lab 6/guessingGameRandom.c
+stdio.h
+-
+stdbool.h
+-
+stdlib.h
+-
+time.h
+-
+ranlib.h
+-
+
+/Users/vasanthrajasekaran/Documents/Sophomore Year/CMPS 1600/Lab 6/swapProblem.c
 stdio.h
 -
 stdbool.h

@@ -1,5 +1,9 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/Lab_6.dir/main.c.o"
+  "CMakeFiles/Lab_6.dir/swapProblem.c.o"
+  "CMakeFiles/Lab_6.dir/guessingGameBasic.c.o"
+  "CMakeFiles/Lab_6.dir/guessingGameRandom.c.o"
+  "CMakeFiles/Lab_6.dir/LinkedS.c.o"
+  "CMakeFiles/Lab_6.dir/asscessingM.c.o"
   "Lab_6.pdb"
   "Lab_6"
 )

@@ -123,32 +123,140 @@ Lab_6/fast:
 	$(MAKE) -f CMakeFiles/Lab_6.dir/build.make CMakeFiles/Lab_6.dir/build
 .PHONY : Lab_6/fast
 
-main.o: main.c.o
+LinkedS.o: LinkedS.c.o
 
-.PHONY : main.o
+.PHONY : LinkedS.o
 
 # target to build an object file
-main.c.o:
-	$(MAKE) -f CMakeFiles/Lab_6.dir/build.make CMakeFiles/Lab_6.dir/main.c.o
-.PHONY : main.c.o
+LinkedS.c.o:
+	$(MAKE) -f CMakeFiles/Lab_6.dir/build.make CMakeFiles/Lab_6.dir/LinkedS.c.o
+.PHONY : LinkedS.c.o
 
-main.i: main.c.i
+LinkedS.i: LinkedS.c.i
 
-.PHONY : main.i
+.PHONY : LinkedS.i
 
 # target to preprocess a source file
-main.c.i:
-	$(MAKE) -f CMakeFiles/Lab_6.dir/build.make CMakeFiles/Lab_6.dir/main.c.i
-.PHONY : main.c.i
+LinkedS.c.i:
+	$(MAKE) -f CMakeFiles/Lab_6.dir/build.make CMakeFiles/Lab_6.dir/LinkedS.c.i
+.PHONY : LinkedS.c.i
 
-main.s: main.c.s
+LinkedS.s: LinkedS.c.s
 
-.PHONY : main.s
+.PHONY : LinkedS.s
 
 # target to generate assembly for a file
-main.c.s:
-	$(MAKE) -f CMakeFiles/Lab_6.dir/build.make CMakeFiles/Lab_6.dir/main.c.s
-.PHONY : main.c.s
+LinkedS.c.s:
+	$(MAKE) -f CMakeFiles/Lab_6.dir/build.make CMakeFiles/Lab_6.dir/LinkedS.c.s
+.PHONY : LinkedS.c.s
+
+asscessingM.o: asscessingM.c.o
+
+.PHONY : asscessingM.o
+
+# target to build an object file
+asscessingM.c.o:
+	$(MAKE) -f CMakeFiles/Lab_6.dir/build.make CMakeFiles/Lab_6.dir/asscessingM.c.o
+.PHONY : asscessingM.c.o
+
+asscessingM.i: asscessingM.c.i
+
+.PHONY : asscessingM.i
+
+# target to preprocess a source file
+asscessingM.c.i:
+	$(MAKE) -f CMakeFiles/Lab_6.dir/build.make CMakeFiles/Lab_6.dir/asscessingM.c.i
+.PHONY : asscessingM.c.i
+
+asscessingM.s: asscessingM.c.s
+
+.PHONY : asscessingM.s
+
+# target to generate assembly for a file
+asscessingM.c.s:
+	$(MAKE) -f CMakeFiles/Lab_6.dir/build.make CMakeFiles/Lab_6.dir/asscessingM.c.s
+.PHONY : asscessingM.c.s
+
+guessingGameBasic.o: guessingGameBasic.c.o
+
+.PHONY : guessingGameBasic.o
+
+# target to build an object file
+guessingGameBasic.c.o:
+	$(MAKE) -f CMakeFiles/Lab_6.dir/build.make CMakeFiles/Lab_6.dir/guessingGameBasic.c.o
+.PHONY : guessingGameBasic.c.o
+
+guessingGameBasic.i: guessingGameBasic.c.i
+
+.PHONY : guessingGameBasic.i
+
+# target to preprocess a source file
+guessingGameBasic.c.i:
+	$(MAKE) -f CMakeFiles/Lab_6.dir/build.make CMakeFiles/Lab_6.dir/guessingGameBasic.c.i
+.PHONY : guessingGameBasic.c.i
+
+guessingGameBasic.s: guessingGameBasic.c.s
+
+.PHONY : guessingGameBasic.s
+
+# target to generate assembly for a file
+guessingGameBasic.c.s:
+	$(MAKE) -f CMakeFiles/Lab_6.dir/build.make CMakeFiles/Lab_6.dir/guessingGameBasic.c.s
+.PHONY : guessingGameBasic.c.s
+
+guessingGameRandom.o: guessingGameRandom.c.o
+
+.PHONY : guessingGameRandom.o
+
+# target to build an object file
+guessingGameRandom.c.o:
+	$(MAKE) -f CMakeFiles/Lab_6.dir/build.make CMakeFiles/Lab_6.dir/guessingGameRandom.c.o
+.PHONY : guessingGameRandom.c.o
+
+guessingGameRandom.i: guessingGameRandom.c.i
+
+.PHONY : guessingGameRandom.i
+
+# target to preprocess a source file
+guessingGameRandom.c.i:
+	$(MAKE) -f CMakeFiles/Lab_6.dir/build.make CMakeFiles/Lab_6.dir/guessingGameRandom.c.i
+.PHONY : guessingGameRandom.c.i
+
+guessingGameRandom.s: guessingGameRandom.c.s
+
+.PHONY : guessingGameRandom.s
+
+# target to generate assembly for a file
+guessingGameRandom.c.s:
+	$(MAKE) -f CMakeFiles/Lab_6.dir/build.make CMakeFiles/Lab_6.dir/guessingGameRandom.c.s
+.PHONY : guessingGameRandom.c.s
+
+swapProblem.o: swapProblem.c.o
+
+.PHONY : swapProblem.o
+
+# target to build an object file
+swapProblem.c.o:
+	$(MAKE) -f CMakeFiles/Lab_6.dir/build.make CMakeFiles/Lab_6.dir/swapProblem.c.o
+.PHONY : swapProblem.c.o
+
+swapProblem.i: swapProblem.c.i
+
+.PHONY : swapProblem.i
+
+# target to preprocess a source file
+swapProblem.c.i:
+	$(MAKE) -f CMakeFiles/Lab_6.dir/build.make CMakeFiles/Lab_6.dir/swapProblem.c.i
+.PHONY : swapProblem.c.i
+
+swapProblem.s: swapProblem.c.s
+
+.PHONY : swapProblem.s
+
+# target to generate assembly for a file
+swapProblem.c.s:
+	$(MAKE) -f CMakeFiles/Lab_6.dir/build.make CMakeFiles/Lab_6.dir/swapProblem.c.s
+.PHONY : swapProblem.c.s
 
 # Help Target
 help:
@@ -159,9 +267,21 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... Lab_6"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
+	@echo "... LinkedS.o"
+	@echo "... LinkedS.i"
+	@echo "... LinkedS.s"
+	@echo "... asscessingM.o"
+	@echo "... asscessingM.i"
+	@echo "... asscessingM.s"
+	@echo "... guessingGameBasic.o"
+	@echo "... guessingGameBasic.i"
+	@echo "... guessingGameBasic.s"
+	@echo "... guessingGameRandom.o"
+	@echo "... guessingGameRandom.i"
+	@echo "... guessingGameRandom.s"
+	@echo "... swapProblem.o"
+	@echo "... swapProblem.i"
+	@echo "... swapProblem.s"
 .PHONY : help
 
 

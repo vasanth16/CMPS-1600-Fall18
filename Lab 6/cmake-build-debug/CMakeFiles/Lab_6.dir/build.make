@@ -57,41 +57,145 @@ include CMakeFiles/Lab_6.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/Lab_6.dir/flags.make
 
-CMakeFiles/Lab_6.dir/main.c.o: CMakeFiles/Lab_6.dir/flags.make
-CMakeFiles/Lab_6.dir/main.c.o: ../main.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/vasanthrajasekaran/Documents/Sophomore Year/CMPS 1600/Lab 6/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/Lab_6.dir/main.c.o"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Lab_6.dir/main.c.o   -c "/Users/vasanthrajasekaran/Documents/Sophomore Year/CMPS 1600/Lab 6/main.c"
+CMakeFiles/Lab_6.dir/swapProblem.c.o: CMakeFiles/Lab_6.dir/flags.make
+CMakeFiles/Lab_6.dir/swapProblem.c.o: ../swapProblem.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/vasanthrajasekaran/Documents/Sophomore Year/CMPS 1600/Lab 6/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/Lab_6.dir/swapProblem.c.o"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Lab_6.dir/swapProblem.c.o   -c "/Users/vasanthrajasekaran/Documents/Sophomore Year/CMPS 1600/Lab 6/swapProblem.c"
 
-CMakeFiles/Lab_6.dir/main.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Lab_6.dir/main.c.i"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "/Users/vasanthrajasekaran/Documents/Sophomore Year/CMPS 1600/Lab 6/main.c" > CMakeFiles/Lab_6.dir/main.c.i
+CMakeFiles/Lab_6.dir/swapProblem.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Lab_6.dir/swapProblem.c.i"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "/Users/vasanthrajasekaran/Documents/Sophomore Year/CMPS 1600/Lab 6/swapProblem.c" > CMakeFiles/Lab_6.dir/swapProblem.c.i
 
-CMakeFiles/Lab_6.dir/main.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Lab_6.dir/main.c.s"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "/Users/vasanthrajasekaran/Documents/Sophomore Year/CMPS 1600/Lab 6/main.c" -o CMakeFiles/Lab_6.dir/main.c.s
+CMakeFiles/Lab_6.dir/swapProblem.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Lab_6.dir/swapProblem.c.s"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "/Users/vasanthrajasekaran/Documents/Sophomore Year/CMPS 1600/Lab 6/swapProblem.c" -o CMakeFiles/Lab_6.dir/swapProblem.c.s
 
-CMakeFiles/Lab_6.dir/main.c.o.requires:
+CMakeFiles/Lab_6.dir/swapProblem.c.o.requires:
 
-.PHONY : CMakeFiles/Lab_6.dir/main.c.o.requires
+.PHONY : CMakeFiles/Lab_6.dir/swapProblem.c.o.requires
 
-CMakeFiles/Lab_6.dir/main.c.o.provides: CMakeFiles/Lab_6.dir/main.c.o.requires
-	$(MAKE) -f CMakeFiles/Lab_6.dir/build.make CMakeFiles/Lab_6.dir/main.c.o.provides.build
-.PHONY : CMakeFiles/Lab_6.dir/main.c.o.provides
+CMakeFiles/Lab_6.dir/swapProblem.c.o.provides: CMakeFiles/Lab_6.dir/swapProblem.c.o.requires
+	$(MAKE) -f CMakeFiles/Lab_6.dir/build.make CMakeFiles/Lab_6.dir/swapProblem.c.o.provides.build
+.PHONY : CMakeFiles/Lab_6.dir/swapProblem.c.o.provides
 
-CMakeFiles/Lab_6.dir/main.c.o.provides.build: CMakeFiles/Lab_6.dir/main.c.o
+CMakeFiles/Lab_6.dir/swapProblem.c.o.provides.build: CMakeFiles/Lab_6.dir/swapProblem.c.o
+
+
+CMakeFiles/Lab_6.dir/guessingGameBasic.c.o: CMakeFiles/Lab_6.dir/flags.make
+CMakeFiles/Lab_6.dir/guessingGameBasic.c.o: ../guessingGameBasic.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/vasanthrajasekaran/Documents/Sophomore Year/CMPS 1600/Lab 6/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/Lab_6.dir/guessingGameBasic.c.o"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Lab_6.dir/guessingGameBasic.c.o   -c "/Users/vasanthrajasekaran/Documents/Sophomore Year/CMPS 1600/Lab 6/guessingGameBasic.c"
+
+CMakeFiles/Lab_6.dir/guessingGameBasic.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Lab_6.dir/guessingGameBasic.c.i"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "/Users/vasanthrajasekaran/Documents/Sophomore Year/CMPS 1600/Lab 6/guessingGameBasic.c" > CMakeFiles/Lab_6.dir/guessingGameBasic.c.i
+
+CMakeFiles/Lab_6.dir/guessingGameBasic.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Lab_6.dir/guessingGameBasic.c.s"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "/Users/vasanthrajasekaran/Documents/Sophomore Year/CMPS 1600/Lab 6/guessingGameBasic.c" -o CMakeFiles/Lab_6.dir/guessingGameBasic.c.s
+
+CMakeFiles/Lab_6.dir/guessingGameBasic.c.o.requires:
+
+.PHONY : CMakeFiles/Lab_6.dir/guessingGameBasic.c.o.requires
+
+CMakeFiles/Lab_6.dir/guessingGameBasic.c.o.provides: CMakeFiles/Lab_6.dir/guessingGameBasic.c.o.requires
+	$(MAKE) -f CMakeFiles/Lab_6.dir/build.make CMakeFiles/Lab_6.dir/guessingGameBasic.c.o.provides.build
+.PHONY : CMakeFiles/Lab_6.dir/guessingGameBasic.c.o.provides
+
+CMakeFiles/Lab_6.dir/guessingGameBasic.c.o.provides.build: CMakeFiles/Lab_6.dir/guessingGameBasic.c.o
+
+
+CMakeFiles/Lab_6.dir/guessingGameRandom.c.o: CMakeFiles/Lab_6.dir/flags.make
+CMakeFiles/Lab_6.dir/guessingGameRandom.c.o: ../guessingGameRandom.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/vasanthrajasekaran/Documents/Sophomore Year/CMPS 1600/Lab 6/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/Lab_6.dir/guessingGameRandom.c.o"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Lab_6.dir/guessingGameRandom.c.o   -c "/Users/vasanthrajasekaran/Documents/Sophomore Year/CMPS 1600/Lab 6/guessingGameRandom.c"
+
+CMakeFiles/Lab_6.dir/guessingGameRandom.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Lab_6.dir/guessingGameRandom.c.i"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "/Users/vasanthrajasekaran/Documents/Sophomore Year/CMPS 1600/Lab 6/guessingGameRandom.c" > CMakeFiles/Lab_6.dir/guessingGameRandom.c.i
+
+CMakeFiles/Lab_6.dir/guessingGameRandom.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Lab_6.dir/guessingGameRandom.c.s"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "/Users/vasanthrajasekaran/Documents/Sophomore Year/CMPS 1600/Lab 6/guessingGameRandom.c" -o CMakeFiles/Lab_6.dir/guessingGameRandom.c.s
+
+CMakeFiles/Lab_6.dir/guessingGameRandom.c.o.requires:
+
+.PHONY : CMakeFiles/Lab_6.dir/guessingGameRandom.c.o.requires
+
+CMakeFiles/Lab_6.dir/guessingGameRandom.c.o.provides: CMakeFiles/Lab_6.dir/guessingGameRandom.c.o.requires
+	$(MAKE) -f CMakeFiles/Lab_6.dir/build.make CMakeFiles/Lab_6.dir/guessingGameRandom.c.o.provides.build
+.PHONY : CMakeFiles/Lab_6.dir/guessingGameRandom.c.o.provides
+
+CMakeFiles/Lab_6.dir/guessingGameRandom.c.o.provides.build: CMakeFiles/Lab_6.dir/guessingGameRandom.c.o
+
+
+CMakeFiles/Lab_6.dir/LinkedS.c.o: CMakeFiles/Lab_6.dir/flags.make
+CMakeFiles/Lab_6.dir/LinkedS.c.o: ../LinkedS.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/vasanthrajasekaran/Documents/Sophomore Year/CMPS 1600/Lab 6/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/Lab_6.dir/LinkedS.c.o"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Lab_6.dir/LinkedS.c.o   -c "/Users/vasanthrajasekaran/Documents/Sophomore Year/CMPS 1600/Lab 6/LinkedS.c"
+
+CMakeFiles/Lab_6.dir/LinkedS.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Lab_6.dir/LinkedS.c.i"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "/Users/vasanthrajasekaran/Documents/Sophomore Year/CMPS 1600/Lab 6/LinkedS.c" > CMakeFiles/Lab_6.dir/LinkedS.c.i
+
+CMakeFiles/Lab_6.dir/LinkedS.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Lab_6.dir/LinkedS.c.s"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "/Users/vasanthrajasekaran/Documents/Sophomore Year/CMPS 1600/Lab 6/LinkedS.c" -o CMakeFiles/Lab_6.dir/LinkedS.c.s
+
+CMakeFiles/Lab_6.dir/LinkedS.c.o.requires:
+
+.PHONY : CMakeFiles/Lab_6.dir/LinkedS.c.o.requires
+
+CMakeFiles/Lab_6.dir/LinkedS.c.o.provides: CMakeFiles/Lab_6.dir/LinkedS.c.o.requires
+	$(MAKE) -f CMakeFiles/Lab_6.dir/build.make CMakeFiles/Lab_6.dir/LinkedS.c.o.provides.build
+.PHONY : CMakeFiles/Lab_6.dir/LinkedS.c.o.provides
+
+CMakeFiles/Lab_6.dir/LinkedS.c.o.provides.build: CMakeFiles/Lab_6.dir/LinkedS.c.o
+
+
+CMakeFiles/Lab_6.dir/asscessingM.c.o: CMakeFiles/Lab_6.dir/flags.make
+CMakeFiles/Lab_6.dir/asscessingM.c.o: ../asscessingM.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/vasanthrajasekaran/Documents/Sophomore Year/CMPS 1600/Lab 6/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/Lab_6.dir/asscessingM.c.o"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/Lab_6.dir/asscessingM.c.o   -c "/Users/vasanthrajasekaran/Documents/Sophomore Year/CMPS 1600/Lab 6/asscessingM.c"
+
+CMakeFiles/Lab_6.dir/asscessingM.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/Lab_6.dir/asscessingM.c.i"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "/Users/vasanthrajasekaran/Documents/Sophomore Year/CMPS 1600/Lab 6/asscessingM.c" > CMakeFiles/Lab_6.dir/asscessingM.c.i
+
+CMakeFiles/Lab_6.dir/asscessingM.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/Lab_6.dir/asscessingM.c.s"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "/Users/vasanthrajasekaran/Documents/Sophomore Year/CMPS 1600/Lab 6/asscessingM.c" -o CMakeFiles/Lab_6.dir/asscessingM.c.s
+
+CMakeFiles/Lab_6.dir/asscessingM.c.o.requires:
+
+.PHONY : CMakeFiles/Lab_6.dir/asscessingM.c.o.requires
+
+CMakeFiles/Lab_6.dir/asscessingM.c.o.provides: CMakeFiles/Lab_6.dir/asscessingM.c.o.requires
+	$(MAKE) -f CMakeFiles/Lab_6.dir/build.make CMakeFiles/Lab_6.dir/asscessingM.c.o.provides.build
+.PHONY : CMakeFiles/Lab_6.dir/asscessingM.c.o.provides
+
+CMakeFiles/Lab_6.dir/asscessingM.c.o.provides.build: CMakeFiles/Lab_6.dir/asscessingM.c.o
 
 
 # Object files for target Lab_6
 Lab_6_OBJECTS = \
-"CMakeFiles/Lab_6.dir/main.c.o"
+"CMakeFiles/Lab_6.dir/swapProblem.c.o" \
+"CMakeFiles/Lab_6.dir/guessingGameBasic.c.o" \
+"CMakeFiles/Lab_6.dir/guessingGameRandom.c.o" \
+"CMakeFiles/Lab_6.dir/LinkedS.c.o" \
+"CMakeFiles/Lab_6.dir/asscessingM.c.o"
 
 # External object files for target Lab_6
 Lab_6_EXTERNAL_OBJECTS =
 
-Lab_6: CMakeFiles/Lab_6.dir/main.c.o
+Lab_6: CMakeFiles/Lab_6.dir/swapProblem.c.o
+Lab_6: CMakeFiles/Lab_6.dir/guessingGameBasic.c.o
+Lab_6: CMakeFiles/Lab_6.dir/guessingGameRandom.c.o
+Lab_6: CMakeFiles/Lab_6.dir/LinkedS.c.o
+Lab_6: CMakeFiles/Lab_6.dir/asscessingM.c.o
 Lab_6: CMakeFiles/Lab_6.dir/build.make
 Lab_6: CMakeFiles/Lab_6.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/Users/vasanthrajasekaran/Documents/Sophomore Year/CMPS 1600/Lab 6/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Linking C executable Lab_6"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/Users/vasanthrajasekaran/Documents/Sophomore Year/CMPS 1600/Lab 6/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Linking C executable Lab_6"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Lab_6.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -99,7 +203,11 @@ CMakeFiles/Lab_6.dir/build: Lab_6
 
 .PHONY : CMakeFiles/Lab_6.dir/build
 
-CMakeFiles/Lab_6.dir/requires: CMakeFiles/Lab_6.dir/main.c.o.requires
+CMakeFiles/Lab_6.dir/requires: CMakeFiles/Lab_6.dir/swapProblem.c.o.requires
+CMakeFiles/Lab_6.dir/requires: CMakeFiles/Lab_6.dir/guessingGameBasic.c.o.requires
+CMakeFiles/Lab_6.dir/requires: CMakeFiles/Lab_6.dir/guessingGameRandom.c.o.requires
+CMakeFiles/Lab_6.dir/requires: CMakeFiles/Lab_6.dir/LinkedS.c.o.requires
+CMakeFiles/Lab_6.dir/requires: CMakeFiles/Lab_6.dir/asscessingM.c.o.requires
 
 .PHONY : CMakeFiles/Lab_6.dir/requires
 
