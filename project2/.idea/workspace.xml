@@ -55,11 +55,12 @@
       <file leaf-file-name="main.c" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="224" column="31" selection-start-line="224" selection-start-column="31" selection-end-line="224" selection-end-column="31" />
+            <state relative-caret-position="-858">
+              <caret line="5" selection-start-line="5" selection-end-line="5" />
               <folding>
-                <element signature="e#0#18#0" expanded="true" />
+                <element signature="e#65#80#1" />
                 <element signature="e#303#360#1" />
+                <element signature="e#500#729#0" />
                 <element signature="e#405#435#0" />
                 <element signature="e#724#772#0" />
                 <element signature="e#2155#2927#0" />
@@ -161,16 +162,15 @@
       <updated>1541539837146</updated>
       <workItem from="1541539840599" duration="447000" />
       <workItem from="1541897839389" duration="426000" />
-      <workItem from="1541898268036" duration="25690000" />
+      <workItem from="1541898268036" duration="26167000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="26563000" />
+    <option name="totallyTimeSpent" value="27040000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="840" y="23" width="840" height="986" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.0" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -180,7 +180,7 @@
       <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3295838" />
       <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.3295838" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39932507" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="right" id="Palette" order="3" />
@@ -230,11 +230,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="224" column="31" selection-start-line="224" selection-start-column="31" selection-end-line="224" selection-end-column="31" />
+        <state relative-caret-position="-858">
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
           <folding>
-            <element signature="e#0#18#0" expanded="true" />
+            <element signature="e#65#80#1" />
             <element signature="e#303#360#1" />
+            <element signature="e#500#729#0" />
             <element signature="e#405#435#0" />
             <element signature="e#724#772#0" />
             <element signature="e#2155#2927#0" />

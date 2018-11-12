@@ -234,15 +234,17 @@ bool connect (char * email1, char * email2){
         else if (strcmp(curr->data->email, email2) == 0){
             temp2 = curr->data;
         }
+
+        if (temp1!= NULL && temp2 != NULL){
+            newNode->connection1 = temp1;
+            newNode->connection2 = temp2;
+            newNode->next = connections;
+            connections = newNode;
+           // return true;
+        }
         curr = curr->next;
     }
-    if (temp1!= NULL && temp2 != NULL){
-        newNode->connection1 = temp1;
-        newNode->connection2 = temp2;
-        newNode->next = connections;
-        connections = newNode;
-        return true;
-    }
+
 
 }
 
@@ -295,10 +297,10 @@ int main() {
     connect(&"v", &"f");
     //printf("%s\n", connections->connection1->email);
     //printf("%s\n", connections->connection2->email);
-    removee("v");
-    printf("Final Head: %s\n", globalHead->data->email);
-    //printf("%s\n", connections->connection1->email);
-    //printf("%s\n", connections->connection2->email);
+    removee("f");
+    printf("\nFinal Head: %s\n", globalHead->data->email);
+    printf("%s\n", connections->connection1->email);
+    printf("%s\n", connections->connection2->email);
 
 
 
