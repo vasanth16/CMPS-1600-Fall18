@@ -133,10 +133,7 @@ bool removeCs (char * email1){
 
 bool removee (char email[]){
     printf("Enters remove");
-    if (searchC2(email) == true){
-        printf("Hello");
-        removeCs(email);
-    }
+
 
     struct linkedlist* temp = globalHead, *prev;
 
@@ -158,7 +155,10 @@ bool removee (char email[]){
 
     prev->next = temp->next;
 
-
+    while (searchC2(email) == true){
+        printf("Hello");
+        removeCs(email);
+    }
 
     free(temp);
 }
@@ -229,9 +229,11 @@ bool connect (char * email1, char * email2){
     while (curr != NULL) {
         printf("Enters while loop\n");
         if (strcmp(curr->data->email, email1) == 0) {
+            printf("Enters while loop if 1\n");
             temp1 = curr->data;
         }
         else if (strcmp(curr->data->email, email2) == 0){
+            printf("Enters while loop if 2\n");
             temp2 = curr->data;
         }
 
@@ -240,7 +242,9 @@ bool connect (char * email1, char * email2){
             newNode->connection2 = temp2;
             newNode->next = connections;
             connections = newNode;
-           // return true;
+            printf("Enters while loop if 3\n");
+
+            // return true;
         }
         curr = curr->next;
     }
@@ -285,9 +289,11 @@ int main() {
 
         printf("%s\n", globalHead->data->fname);
 
-    }
-*/
 
+    }
+    printf("%s\n", connections->connection1->email);
+    printf("%s\n", connections->connection2->email);
+    */
     add("v");
     printf("%s\n", globalHead->data->email);
     add("b");
@@ -295,9 +301,12 @@ int main() {
     add("f");
     printf("%s\n", globalHead->data->email);
     connect(&"v", &"f");
-    //printf("%s\n", connections->connection1->email);
-    //printf("%s\n", connections->connection2->email);
-    removee("f");
+    printf("%s\n", connections->connection1->email);
+    printf("%s\n", connections->connection2->email);
+    connect(&"v",&"b");
+    printf("%s\n", connections->connection1->email);
+    printf("%s\n", connections->connection2->email);
+    removee("v");
     printf("\nFinal Head: %s\n", globalHead->data->email);
     printf("%s\n", connections->connection1->email);
     printf("%s\n", connections->connection2->email);

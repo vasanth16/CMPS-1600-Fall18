@@ -55,14 +55,15 @@
       <file leaf-file-name="main.c" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-858">
-              <caret line="5" selection-start-line="5" selection-end-line="5" />
+            <state relative-caret-position="1207">
+              <caret line="298" column="24" lean-forward="true" selection-start-line="298" selection-start-column="24" selection-end-line="298" selection-end-column="24" />
               <folding>
                 <element signature="e#65#80#1" />
                 <element signature="e#303#360#1" />
                 <element signature="e#500#729#0" />
                 <element signature="e#405#435#0" />
-                <element signature="e#724#772#0" />
+                <element signature="e#1407#1719#0" />
+                <element signature="e#1725#2434#0" />
                 <element signature="e#2155#2927#0" />
                 <element signature="e#1791#2053#0" />
                 <element signature="e#1686#1897#0" />
@@ -162,12 +163,12 @@
       <updated>1541539837146</updated>
       <workItem from="1541539840599" duration="447000" />
       <workItem from="1541897839389" duration="426000" />
-      <workItem from="1541898268036" duration="26167000" />
+      <workItem from="1541898268036" duration="26904000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="27040000" />
+    <option name="totallyTimeSpent" value="27777000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="840" y="23" width="840" height="986" extended-state="0" />
@@ -230,14 +231,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-858">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
+        <state relative-caret-position="1207">
+          <caret line="298" column="24" lean-forward="true" selection-start-line="298" selection-start-column="24" selection-end-line="298" selection-end-column="24" />
           <folding>
             <element signature="e#65#80#1" />
             <element signature="e#303#360#1" />
             <element signature="e#500#729#0" />
             <element signature="e#405#435#0" />
-            <element signature="e#724#772#0" />
+            <element signature="e#1407#1719#0" />
+            <element signature="e#1725#2434#0" />
             <element signature="e#2155#2927#0" />
             <element signature="e#1791#2053#0" />
             <element signature="e#1686#1897#0" />
