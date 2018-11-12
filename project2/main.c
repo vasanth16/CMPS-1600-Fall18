@@ -4,10 +4,10 @@
 #include <strings.h>
 #include <stdbool.h>
 
-struct linkedlist * globalHead;
-struct linkedlist * connections;
+struct linkedlist * globalHead; // Global Linked list of all the people
+struct linkedlist * connections; // Global LL for the connections
 
-struct person {
+struct person { // This is a person
     struct linkedlist *friends;
     char email [255];
     char fname [255];
@@ -18,9 +18,10 @@ struct person {
 };
 
 struct  linkedlist{
-    struct person * data;
+    // This is the linked list Struct
+    struct person * data; // The data in this  LL is a person
     struct linkedlist* next;
-    struct person * connection1;
+    struct person * connection1; // These connection variables are used for the connections LL only
     struct person * connection2;
 };
 /*
@@ -34,6 +35,12 @@ void printC (){
     }
 }
 */
+
+/**
+ * Checks if person already exists based on the email
+ * @param email
+ * @return
+ */
 bool search (char * email){
     struct linkedlist * curr = globalHead;
 
@@ -46,6 +53,12 @@ bool search (char * email){
 
 }
 
+/**
+ * Searches if a connection between 2 people already exists using their emails
+ * @param email1
+ * @param email2
+ * @return
+ */
 bool searchCs (char * email1, char * email2){
     struct linkedlist * curr = connections;
 
@@ -60,6 +73,11 @@ bool searchCs (char * email1, char * email2){
     return false;
 }
 
+/**
+ * checks if any connections with that email already exists
+ * @param email
+ * @return
+ */
 bool searchC2 (char * email){
     struct linkedlist * curr = connections;
 
@@ -73,6 +91,12 @@ bool searchC2 (char * email){
     return false;
 }
 
+
+/**
+ * Adds a person to the global LL of people
+ * @param email
+ * @return
+ */
 bool add (char* email){
     struct linkedlist * newNode = malloc(sizeof(struct linkedlist));
 
@@ -99,6 +123,12 @@ bool add (char* email){
 
     return true;
 }
+
+/**
+ * Removes connections of a person
+ * @param email1
+ * @return
+ */
 
 bool removeCs (char * email1){
     struct linkedlist* temp = connections, *prev;
@@ -130,6 +160,12 @@ bool removeCs (char * email1){
 
 
 }
+
+/**
+ * Removes a person from the LL of people
+ * @param email
+ * @return
+ */
 
 bool removee (char email[]){
     printf("Enters remove");
@@ -163,10 +199,21 @@ bool removee (char email[]){
     free(temp);
 }
 
+/**
+ * Helper function for the edit function
+ * Shows the information of a person
+ * @param head
+ */
+
 void showInfo (struct linkedlist * head){
     printf("1.Email: %s\n2.First name: %s\n3.Last Name: %s\n4.Age: %s\n5.Hometown: %s\n6.Hobby: %s\n", head->data->email, head->data->fname, head->data->lname, head->data->age, head->data->hometown, head->data->hobby);
 }
 
+/**
+ * Function to edit a person
+ * @param email
+ * @return
+ */
 bool edit (char* email){
     int choice;
     char temp [255];
@@ -209,6 +256,12 @@ bool edit (char* email){
     }
 }
 
+/**
+ * Creates a connection between two people
+ * @param email1
+ * @param email2
+ * @return
+ */
 bool connect (char * email1, char * email2){
     printf("Enters Connect\n");
     if (search(email1) == false || search(email2) == false){
@@ -251,6 +304,7 @@ bool connect (char * email1, char * email2){
 
 
 }
+
 
 int main() {
     char choice [5];
