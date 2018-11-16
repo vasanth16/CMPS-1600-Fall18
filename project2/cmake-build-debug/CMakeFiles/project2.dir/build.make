@@ -57,38 +57,38 @@ include CMakeFiles/project2.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/project2.dir/flags.make
 
-CMakeFiles/project2.dir/main.c.o: CMakeFiles/project2.dir/flags.make
-CMakeFiles/project2.dir/main.c.o: ../main.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/vasanthrajasekaran/Documents/Sophomore Year/CMPS 1600/project2/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/project2.dir/main.c.o"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/project2.dir/main.c.o   -c "/Users/vasanthrajasekaran/Documents/Sophomore Year/CMPS 1600/project2/main.c"
+CMakeFiles/project2.dir/part2.c.o: CMakeFiles/project2.dir/flags.make
+CMakeFiles/project2.dir/part2.c.o: ../part2.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/vasanthrajasekaran/Documents/Sophomore Year/CMPS 1600/project2/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/project2.dir/part2.c.o"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/project2.dir/part2.c.o   -c "/Users/vasanthrajasekaran/Documents/Sophomore Year/CMPS 1600/project2/part2.c"
 
-CMakeFiles/project2.dir/main.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/project2.dir/main.c.i"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "/Users/vasanthrajasekaran/Documents/Sophomore Year/CMPS 1600/project2/main.c" > CMakeFiles/project2.dir/main.c.i
+CMakeFiles/project2.dir/part2.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/project2.dir/part2.c.i"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E "/Users/vasanthrajasekaran/Documents/Sophomore Year/CMPS 1600/project2/part2.c" > CMakeFiles/project2.dir/part2.c.i
 
-CMakeFiles/project2.dir/main.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/project2.dir/main.c.s"
-	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "/Users/vasanthrajasekaran/Documents/Sophomore Year/CMPS 1600/project2/main.c" -o CMakeFiles/project2.dir/main.c.s
+CMakeFiles/project2.dir/part2.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/project2.dir/part2.c.s"
+	/Library/Developer/CommandLineTools/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S "/Users/vasanthrajasekaran/Documents/Sophomore Year/CMPS 1600/project2/part2.c" -o CMakeFiles/project2.dir/part2.c.s
 
-CMakeFiles/project2.dir/main.c.o.requires:
+CMakeFiles/project2.dir/part2.c.o.requires:
 
-.PHONY : CMakeFiles/project2.dir/main.c.o.requires
+.PHONY : CMakeFiles/project2.dir/part2.c.o.requires
 
-CMakeFiles/project2.dir/main.c.o.provides: CMakeFiles/project2.dir/main.c.o.requires
-	$(MAKE) -f CMakeFiles/project2.dir/build.make CMakeFiles/project2.dir/main.c.o.provides.build
-.PHONY : CMakeFiles/project2.dir/main.c.o.provides
+CMakeFiles/project2.dir/part2.c.o.provides: CMakeFiles/project2.dir/part2.c.o.requires
+	$(MAKE) -f CMakeFiles/project2.dir/build.make CMakeFiles/project2.dir/part2.c.o.provides.build
+.PHONY : CMakeFiles/project2.dir/part2.c.o.provides
 
-CMakeFiles/project2.dir/main.c.o.provides.build: CMakeFiles/project2.dir/main.c.o
+CMakeFiles/project2.dir/part2.c.o.provides.build: CMakeFiles/project2.dir/part2.c.o
 
 
 # Object files for target project2
 project2_OBJECTS = \
-"CMakeFiles/project2.dir/main.c.o"
+"CMakeFiles/project2.dir/part2.c.o"
 
 # External object files for target project2
 project2_EXTERNAL_OBJECTS =
 
-project2: CMakeFiles/project2.dir/main.c.o
+project2: CMakeFiles/project2.dir/part2.c.o
 project2: CMakeFiles/project2.dir/build.make
 project2: CMakeFiles/project2.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/Users/vasanthrajasekaran/Documents/Sophomore Year/CMPS 1600/project2/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Linking C executable project2"
@@ -99,7 +99,7 @@ CMakeFiles/project2.dir/build: project2
 
 .PHONY : CMakeFiles/project2.dir/build
 
-CMakeFiles/project2.dir/requires: CMakeFiles/project2.dir/main.c.o.requires
+CMakeFiles/project2.dir/requires: CMakeFiles/project2.dir/part2.c.o.requires
 
 .PHONY : CMakeFiles/project2.dir/requires
 

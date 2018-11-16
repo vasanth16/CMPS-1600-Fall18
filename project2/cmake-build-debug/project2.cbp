@@ -78,7 +78,7 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/Users/vasanthrajasekaran/Documents/Sophomore Year/CMPS 1600/project2/main.c">
+		<Unit filename="/Users/vasanthrajasekaran/Documents/Sophomore Year/CMPS 1600/project2/part2.c">
 			<Option target="project2"/>
 		</Unit>
 		<Unit filename="/Users/vasanthrajasekaran/Documents/Sophomore Year/CMPS 1600/project2/CMakeLists.txt">

@@ -304,7 +304,7 @@ bool connect (char * email1, char * email2){
 
 
 }
-
+/*
 
 int main() {
     char choice [5];
@@ -347,7 +347,7 @@ int main() {
     }
     printf("%s\n", connections->connection1->email);
     printf("%s\n", connections->connection2->email);
-    */
+
     add("v");
     printf("%s\n", globalHead->data->email);
     add("b");
@@ -368,3 +368,4 @@ int main() {
 
 
 }
+ */
