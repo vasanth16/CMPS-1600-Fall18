@@ -57,8 +57,8 @@
       <file leaf-file-name="part2.c" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/part2.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="257">
-              <caret line="408" lean-forward="true" selection-start-line="408" selection-end-line="408" />
+            <state relative-caret-position="202">
+              <caret line="344" column="29" selection-start-line="344" selection-start-column="29" selection-end-line="344" selection-end-column="29" />
               <folding>
                 <element signature="e#297#495#1" />
                 <element signature="e#498#781#1" />
@@ -191,16 +191,15 @@
       <workItem from="1542327633998" duration="446000" />
       <workItem from="1542331442617" duration="2860000" />
       <workItem from="1542379560156" duration="366000" />
-      <workItem from="1542405810299" duration="7977000" />
+      <workItem from="1542405810299" duration="8337000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="46490000" />
+    <option name="totallyTimeSpent" value="46850000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="986" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.32971668" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -208,9 +207,9 @@
       <window_info anchor="bottom" id="CMake" order="8" weight="0.3295838" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" weight="0.32997763" />
       <window_info anchor="bottom" id="Version Control" order="11" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.21147357" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.21147357" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="9" weight="0.41507313" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.41507313" />
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39932507" />
       <window_info anchor="right" id="Palette" order="3" />
@@ -342,8 +341,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/part2.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="257">
-          <caret line="408" lean-forward="true" selection-start-line="408" selection-end-line="408" />
+        <state relative-caret-position="202">
+          <caret line="344" column="29" selection-start-line="344" selection-start-column="29" selection-end-line="344" selection-end-column="29" />
           <folding>
             <element signature="e#297#495#1" />
             <element signature="e#498#781#1" />
