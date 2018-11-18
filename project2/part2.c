@@ -37,7 +37,7 @@ struct  linkedlist{
  * @return
  */
 bool search (char * email){
-    printf("Enters friends");
+    //printf("Enters friends");
     struct linkedlist * curr = globalHead;
 
     while (curr != NULL){
@@ -60,9 +60,9 @@ bool searchCs (char * email1, char * email2){
 
     while (curr != NULL){
         if (strcmp(curr->connection1->email, email1) == 0 || strcmp(curr->connection1->email, email2) == 0 ){
-            return true;
-        }else if (strcmp(curr->connection2->email, email1) == 0 || strcmp(curr->connection2->email, email2) == 0 ){
-            return true;
+            if (strcmp(curr->connection2->email, email1) == 0 || strcmp(curr->connection2->email, email2) == 0 ){
+                return true;
+            }
         }
         curr = curr->next;
     }
@@ -276,7 +276,7 @@ bool edit (char* email){
  * @return
  */
 bool connect (char * email1, char * email2){
-    printf("Enters Connect\n");
+    printf("\n**Enters Connect**\n");
     if (search(email1) == false || search(email2) == false){
         printf("enters if 1\n");
         return false;
@@ -346,66 +346,70 @@ bool disconnect(char* email1, char* email2){
     struct linkedlist * temp = connections;
     struct linkedlist * prev = malloc(sizeof(struct linkedlist));
 
-    if (connections == NULL){
-        printf("Connections == NULL\n");
-        return false;
-    }
 
-    if (strcmp(temp->connection1->email, email1) == 0){
-        if (strcmp(temp->connection2->email, email2) == 0) {
-            printf("first connection 1 is equal to the email passed in\n");
-            printf("Before removal %s\n", connections->connection1->fname);
-            connections = connections->next;
-            printf("After removal: %s\n", connections->connection1->email);
-            free(temp);
-            return true;
-        }
-    }
-    else if (strcmp(temp->connection2->email, email1) == 0 ){
-        if (strcmp(temp->connection1->email, email2) == 0) {
-            printf("first connection 2 is equal to the email passed in\n");
-            connections = connections->next;
-            free(temp);
-            return true;
-        }
-    }
-/*
     while (temp != NULL){
-        if (temp->next == NULL) {
-            if (strcmp(temp->connection1->email, email1) == 0 || strcmp(temp->connection2->email, email1) == 0) {
-                if (strcmp(temp->connection1->email, email2) == 0 || strcmp(temp->connection2->email, email2) == 0) {
-                    prev->next = temp->next;
-                    free(temp);
-                    return true;
-                }
-            } else {
-                prev = temp;
-                temp = temp->next;
-
-            }
+        if (strcmp(email1, temp->connection1->email) == 0 && strcmp(email2, temp->connection2->email) == 0){
+            prev->next = temp->next;
+            free(temp);
+            return true;
+        }else if (strcmp(email2, temp->connection1->email) == 0 && strcmp(email1, temp->connection2->email) == 0){
+            prev->next = temp->next;
+            free(temp);
+            return true;
+        } else{
+            prev = temp;
+            temp = temp->next;
         }
     }
-    if (temp == NULL) return false;
 
-    while (strcmp(temp->connection1->email, email1) != 0 || strcmp(temp->connection2->email, email2) != 0 || strcmp(temp->connection2->email, email1) != 0 || strcmp(temp->connection1->email, email2) != 0){
+}
 
-            if (temp->next != NULL) {
-                printf("enters while loop in removeCS\n");
+bool getFriends(char* email){
 
-                prev = temp;
-                temp = temp->next;
+    struct linkedlist * temp = connections;
 
-            } else {
-                break;
-            }
+    printf("\n%s's Friends are: \n",email);
 
+    while (temp != NULL){
+        if (strcmp(email, temp->connection1->email) == 0){
+            printf("%s\n", temp->connection2->fname);
+        } else if (strcmp(email, temp->connection2->email) == 0){
+            printf("%s\n", temp->connection1->fname);
+        }
+        temp = temp->next;
     }
 
-    printf("exits while loop on removeCS\n");
+
+}
+
+bool saveNetwork(char* peopleFilename, char* connectionsFilename){
+    FILE *file1 = fopen(peopleFilename,"w");
+    FILE *file2 = fopen(connectionsFilename,"w");
+
+    struct linkedlist * tempP = globalHead;
+    struct linkedlist * tempC = connections;
 
 
-    //if (strcmp(temp->connection1->email, email1) != 0 || strcmp(temp->connection2->email, email1) != 0)
-    */
+
+    if (file1 == NULL || file2 == NULL ){
+        printf("Couldnt open file");
+        return 0;
+    }
+
+    while (tempP != NULL){
+        fprintf(file1, "First Name: %s, Last Name: %s, Email: %s, Age: %s, Hometown: %s, Hobby: %s\n", tempP->data->fname, tempP->data->lname, tempP->data->email, tempP->data->age, tempP->data->hometown, tempP->data->hobby);
+        tempP = tempP->next;
+    }
+    fclose(file1);
+
+    while (tempC != NULL){
+        fprintf(file2, "%s and %s\n", tempC->connection1->email, tempC->connection2->email);
+        tempC = tempC->next;
+    }
+
+}
+
+bool retrieveNetwork(char* peopleFilename, char* connectionsFilename){
 
 }
 
@@ -506,11 +510,14 @@ int main() {
     //printf("\n %s ",connections->connection2->fname);
     printf("First display\n");
     display();
-    disconnect("Nitya", "Vasanth");
+    getFriends("Mom");
+    disconnect("Vasanth", "Mom");
     //printf(connections->connection1->fname);
     //printf(connections->connection2->fname);
     printf("Second display\n");
     display();
+
+    saveNetwork("people.txt", "connections.txt");
 
 
 

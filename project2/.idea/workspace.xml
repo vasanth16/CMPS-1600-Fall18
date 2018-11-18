@@ -12,8 +12,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f1451941-6afc-4635-8c0a-696c3f54bcab" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/project2" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/project2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/part2.c" beforeDir="false" afterPath="$PROJECT_DIR$/part2.c" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/src/cmake-build-debug/CMakeFiles/cmake-build-debug/" />
@@ -57,8 +56,8 @@
       <file leaf-file-name="part2.c" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/part2.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="202">
-              <caret line="344" column="29" selection-start-line="344" selection-start-column="29" selection-end-line="344" selection-end-column="29" />
+            <state relative-caret-position="208">
+              <caret line="411" column="7" selection-start-line="411" selection-start-column="7" selection-end-line="411" selection-end-column="7" />
               <folding>
                 <element signature="e#297#495#1" />
                 <element signature="e#498#781#1" />
@@ -70,7 +69,9 @@
                 <element signature="e#2386#2464#0" />
                 <element signature="e#2469#3178#0" />
                 <element signature="e#3180#3250#0" />
+                <element signature="e#3258#4508#0" />
                 <element signature="e#4061#4137#0" />
+                <element signature="e#4143#4705#0" />
                 <element signature="e#4707#4807#0" />
                 <element signature="e#5275#5537#1" />
                 <element signature="e#5073#5136#0" />
@@ -78,6 +79,9 @@
                 <element signature="e#6620#6715#0" />
                 <element signature="e#6720#7894#0" />
                 <element signature="e#8427#8449#0" />
+                <element signature="e#8982#11206#0" />
+                <element signature="e#9687#9719#0" />
+                <element signature="e#10115#10184#0" />
                 <element signature="e#9147#10510#0" />
                 <element signature="e#10586#11830#0" />
               </folding>
@@ -164,7 +168,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Build All">
+  <component name="RunManager" selected="Application.project2">
     <configuration name="Build All" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="project2" RUN_TARGET_NAME="project2" EXPLICIT_BUILD_TARGET_NAME="all" />
     <configuration name="project2" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="project2" TARGET_NAME="project2" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="project2" RUN_TARGET_NAME="project2" />
     <list>
@@ -191,15 +195,16 @@
       <workItem from="1542327633998" duration="446000" />
       <workItem from="1542331442617" duration="2860000" />
       <workItem from="1542379560156" duration="366000" />
-      <workItem from="1542405810299" duration="8337000" />
+      <workItem from="1542405810299" duration="11648000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="46850000" />
+    <option name="totallyTimeSpent" value="50161000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="986" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.32971668" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -207,9 +212,9 @@
       <window_info anchor="bottom" id="CMake" order="8" weight="0.3295838" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" weight="0.32997763" />
       <window_info anchor="bottom" id="Version Control" order="11" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.21147357" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.21147357" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.41507313" />
+      <window_info anchor="bottom" id="Terminal" order="9" weight="0.41507313" />
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39932507" />
       <window_info anchor="right" id="Palette" order="3" />
@@ -240,7 +245,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="5" />
+      <option name="time" value="6" />
     </breakpoint-manager>
   </component>
   <component name="debuggerHistoryManager">
@@ -275,7 +280,9 @@
             <element signature="e#2386#2464#0" />
             <element signature="e#2469#3178#0" />
             <element signature="e#3180#3250#0" />
+            <element signature="e#3258#4508#0" />
             <element signature="e#4061#4137#0" />
+            <element signature="e#4143#4705#0" />
             <element signature="e#4707#4807#0" />
             <element signature="e#5275#5537#1" />
             <element signature="e#5073#5136#0" />
@@ -283,6 +290,9 @@
             <element signature="e#6620#6715#0" />
             <element signature="e#6720#7894#0" />
             <element signature="e#8427#8449#0" />
+            <element signature="e#8982#11206#0" />
+            <element signature="e#9687#9719#0" />
+            <element signature="e#10115#10184#0" />
             <element signature="e#9147#10510#0" />
             <element signature="e#10586#11830#0" />
           </folding>
@@ -341,8 +351,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/part2.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="202">
-          <caret line="344" column="29" selection-start-line="344" selection-start-column="29" selection-end-line="344" selection-end-column="29" />
+        <state relative-caret-position="208">
+          <caret line="411" column="7" selection-start-line="411" selection-start-column="7" selection-end-line="411" selection-end-column="7" />
           <folding>
             <element signature="e#297#495#1" />
             <element signature="e#498#781#1" />
@@ -354,7 +364,9 @@
             <element signature="e#2386#2464#0" />
             <element signature="e#2469#3178#0" />
             <element signature="e#3180#3250#0" />
+            <element signature="e#3258#4508#0" />
             <element signature="e#4061#4137#0" />
+            <element signature="e#4143#4705#0" />
             <element signature="e#4707#4807#0" />
             <element signature="e#5275#5537#1" />
             <element signature="e#5073#5136#0" />
@@ -362,6 +374,9 @@
             <element signature="e#6620#6715#0" />
             <element signature="e#6720#7894#0" />
             <element signature="e#8427#8449#0" />
+            <element signature="e#8982#11206#0" />
+            <element signature="e#9687#9719#0" />
+            <element signature="e#10115#10184#0" />
             <element signature="e#9147#10510#0" />
             <element signature="e#10586#11830#0" />
           </folding>
