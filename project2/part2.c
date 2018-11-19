@@ -319,6 +319,10 @@ bool connect (char * email1, char * email2){
 
 }
 
+/**
+ * Display displays all the people in the social network and their connections
+ */
+
 void display(){
     struct linkedlist * currP = globalHead;
 
@@ -340,6 +344,13 @@ void display(){
     }
     //printf("Done with display\n");
 }
+
+/**
+ * Disconnects two people if their nodes exist
+ * @param email1
+ * @param email2
+ * @return
+ */
 
 bool disconnect(char* email1, char* email2){
     printf("Enters disconnect\n");
@@ -364,6 +375,12 @@ bool disconnect(char* email1, char* email2){
 
 }
 
+/**
+ * gets all the friends of a person given their email
+ * @param email
+ * @return
+ */
+
 bool getFriends(char* email){
 
     struct linkedlist * temp = connections;
@@ -382,6 +399,13 @@ bool getFriends(char* email){
 
 }
 
+/**
+ * Saves the network to a text file
+ * @param peopleFilename
+ * @param connectionsFilename
+ * @return
+ */
+
 bool saveNetwork(char* peopleFilename, char* connectionsFilename){
     FILE *file1 = fopen(peopleFilename,"w");
     FILE *file2 = fopen(connectionsFilename,"w");
@@ -397,13 +421,13 @@ bool saveNetwork(char* peopleFilename, char* connectionsFilename){
     }
 
     while (tempP != NULL){
-        fprintf(file1, "%s, %s, %s, %s, %s, %s\n", tempP->data->fname, tempP->data->lname, tempP->data->email, tempP->data->age, tempP->data->hometown, tempP->data->hobby);
+        fprintf(file1, "%s,%s,%s,%s,%s,%s\n", tempP->data->fname, tempP->data->lname, tempP->data->email, tempP->data->age, tempP->data->hometown, tempP->data->hobby);
         tempP = tempP->next;
     }
     fclose(file1);
 
     while (tempC != NULL){
-        fprintf(file2, "%s, %s\n", tempC->connection1->email, tempC->connection2->email);
+        fprintf(file2, "%s,%s,\n", tempC->connection1->email, tempC->connection2->email);
         tempC = tempC->next;
     }
     fclose(file2);
@@ -412,6 +436,13 @@ bool saveNetwork(char* peopleFilename, char* connectionsFilename){
     return true;
 
 }
+
+/**
+ * Gets the network from a text file and imports it into the linkedlists
+ * @param peopleFilename
+ * @param connectionsFilename
+ * @return
+ */
 
 bool retrieveNetwork(char* peopleFilename, char* connectionsFilename){
     FILE *file1 = fopen(peopleFilename,"r");
@@ -470,9 +501,11 @@ bool retrieveNetwork(char* peopleFilename, char* connectionsFilename){
 
             }
         }
-        newNodePerson->data = newPerson;
-        newNodePerson->next = globalHead;
-        globalHead = newNodePerson;
+        if (search(newPerson->email) == false) {
+            newNodePerson->data = newPerson;
+            newNodePerson->next = globalHead;
+            globalHead = newNodePerson;
+        }
 
 
     }
@@ -513,7 +546,10 @@ bool retrieveNetwork(char* peopleFilename, char* connectionsFilename){
 
 }
 
-
+/**
+ * Has an interface with easy access to all functions
+ * @return
+ */
 int main() {
     char choice[5];
     char email1[30];
@@ -582,38 +618,4 @@ int main() {
 
     }
 
-
 }
-
-/*
-    add("Vasanth");
-    add("Nitya");
-    add("Dad");
-    add("Mom");
-
-    connect("Dad","Mom" );
-    connect("Vasanth","Mom" );
-    connect("Nitya","Mom" );
-    connect("Vasanth", "Nitya");
-
-
-    //printf("\n %s ",connections->connection1->fname);
-    //printf("\n %s ",connections->connection2->fname);
-    printf("First display\n");
-    display();
-    getFriends("Mom");
-    disconnect("Vasanth", "Mom");
-    //printf(connections->connection1->fname);
-    //printf(connections->connection2->fname);
-    printf("Second display\n");
-    display();
-
-
-    saveNetwork("people.txt", "connections.txt");
-
-    retrieveNetwork("people.txt", "connections.txt");
-    printf("First email: %s\n",globalHead->data->email);
-    printf("First connection email: %s", connections->next->connection1->email);
-    printf("Second connection email: %s", connections->connection2->email);
-
-*/
