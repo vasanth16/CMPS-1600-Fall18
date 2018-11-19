@@ -1,6 +1,7 @@
-//
-// Created by Vasanth Rajasekaran on 11/13/18.
-//
+/**
+ * Created by Vasanth Rajasekaran on 11/13/18.
+ * Project 1 Part 2
+ */
 
 
 
@@ -75,11 +76,9 @@ bool searchCs (char * email1, char * email2){
  * @return
  */
 bool searchC2 (char * email){
-    printf("Enters searchC2\n");
     struct linkedlist * curr = connections;
 
     while (curr != NULL){
-        //printf("YUH");
         if (strcmp(curr->connection1->email,email) == 0 ||strcmp(curr->connection2->email,email) == 0 ){
             return true;
         }
@@ -128,34 +127,27 @@ bool add (char* email){
  */
 
 bool removeCs (char * email1){
-    printf("Enters removeCS\n");
     struct linkedlist * temp = connections;
     struct linkedlist * prev = malloc(sizeof(struct linkedlist));
 
     if (connections == NULL){
-        printf("Connections == NULL\n");
         return false;
     }
 
     if (strcmp(temp->connection1->email, email1) == 0){
-        printf("first connection 1 is equal to the email passed in\n");
-        printf("Before removal %s\n", connections->connection1->fname);
         connections = connections->next;
-        printf("After removal: %s\n", connections->connection1->email);
         free(temp);
         return true;
     }
     else if (strcmp(temp->connection2->email, email1) == 0 ){
-        printf("first connection 2 is equal to the email passed in\n");
         connections = connections->next;
         free(temp);
         return true;
     }
 
+
     while (strcmp(temp->connection1->email, email1) != 0 || strcmp(temp->connection2->email, email1) != 0){
         if (temp->next != NULL) {
-            printf("enters while loop in removeCS\n");
-
             prev = temp;
             temp = temp->next;
         } else {
@@ -163,11 +155,11 @@ bool removeCs (char * email1){
         }
     }
 
-    printf("exits while loop on removeCS\n");
     if (temp == NULL) return false;
 
     prev->next = temp->next;
     free(temp);
+    return true;
 
 
 }
@@ -179,11 +171,12 @@ bool removeCs (char * email1){
  */
 
 bool removee (char email[]){
-    printf("Enters remove\n");
-
 
     struct linkedlist* temp = globalHead;
     struct linkedlist * prev = malloc(sizeof(struct linkedlist));
+    while (searchC2(email) == true){
+        removeCs(email);
+    }
 
     if (temp != NULL && strcmp(temp->data->email, email) == 0)
     {
@@ -203,11 +196,7 @@ bool removee (char email[]){
 
     prev->next = temp->next;
 
-    while (searchC2(email) == true){
-        //printf("Hello\n");
-        removeCs(email);
-    }
-    printf("Done with remove\n");
+
 
     free(temp);
 }
@@ -219,7 +208,7 @@ bool removee (char email[]){
  */
 
 void showInfo (struct linkedlist * head){
-    printf("1.Email: %s\n2.First name: %s\n3.Last Name: %s\n4.Age: %s\n5.Hometown: %s\n6.Hobby: %s\n", head->data->email, head->data->fname, head->data->lname, head->data->age, head->data->hometown, head->data->hobby);
+    printf("2.First name: %s\n3.Last Name: %s\n4.Age: %s\n5.Hometown: %s\n6.Hobby: %s\n", head->data->fname, head->data->lname, head->data->age, head->data->hometown, head->data->hobby);
 }
 
 /**
@@ -238,11 +227,7 @@ bool edit (char* email){
             showInfo(globalHead);
             printf("Type the number of the data you want to edit, else enter 9");
             scanf("%d", &choice);
-            if (choice == 1){
-                printf("Enter new email");
-                scanf("%s", temp);
-                strcpy(globalHead->data->email, temp);
-            } else if (choice == 2){
+             if (choice == 2){
                 printf("Enter new first name");
                 scanf("%s", temp);
                 strcpy(globalHead->data->fname, temp);
@@ -276,13 +261,10 @@ bool edit (char* email){
  * @return
  */
 bool connect (char * email1, char * email2){
-    printf("\n**Enters Connect**\n");
     if (search(email1) == false || search(email2) == false){
-        printf("enters if 1\n");
         return false;
     }
     if (searchCs(email1,email2) == true){
-        printf("Enters if 2\n");
         return false;
     }
     struct person *temp1 = NULL;
@@ -293,13 +275,10 @@ bool connect (char * email1, char * email2){
 
 
     while (curr != NULL) {
-        printf("Enters while loop\n");
         if (strcmp(curr->data->email, email1) == 0) {
-            printf("Enters while loop if 1\n");
             temp1 = curr->data;
         }
         else if (strcmp(curr->data->email, email2) == 0){
-            printf("Enters while loop if 2\n");
             temp2 = curr->data;
         }
 
@@ -309,7 +288,6 @@ bool connect (char * email1, char * email2){
             newNode->connection2 = temp2;
             newNode->next = connections;
             connections = newNode;
-            printf("Enters while loop if 3\n");
 
             return true;
         }
@@ -342,7 +320,6 @@ void display(){
         }
         currP = currP->next;
     }
-    //printf("Done with display\n");
 }
 
 /**
@@ -353,10 +330,18 @@ void display(){
  */
 
 bool disconnect(char* email1, char* email2){
-    printf("Enters disconnect\n");
     struct linkedlist * temp = connections;
-    struct linkedlist * prev = malloc(sizeof(struct linkedlist));
+    struct linkedlist * prev = NULL;
 
+    if (strcmp(email1,  connections->connection1->email) == 0 && strcmp(email2, connections->connection2->email) == 0){
+        connections = connections->next;
+        free(temp);
+        return true;
+    }else if (strcmp(email2, temp->connection1->email) == 0 && strcmp(email1, temp->connection2->email) == 0){
+        connections = connections->next;
+        free(temp);
+        return true;
+    }
 
     while (temp != NULL){
         if (strcmp(email1, temp->connection1->email) == 0 && strcmp(email2, temp->connection2->email) == 0){
@@ -372,6 +357,7 @@ bool disconnect(char* email1, char* email2){
             temp = temp->next;
         }
     }
+    return false;
 
 }
 
@@ -450,9 +436,7 @@ bool retrieveNetwork(char* peopleFilename, char* connectionsFilename){
     char line[255];
     char line2[255];
     char * token;
-    //int counter = 0;
 
-    //struct linkedlist * newNodeConnection = malloc(sizeof(struct linkedlist));
 
 
     if (file1 == NULL || file2 == NULL ){
@@ -462,35 +446,25 @@ bool retrieveNetwork(char* peopleFilename, char* connectionsFilename){
 
 
     while (fgets(line,sizeof(line),file1) != NULL) {
-        printf("%s", line);
         token = strtok(line, ",");
         int counter = 0;
         struct person * newPerson = malloc(sizeof(struct person));
         struct linkedlist * newNodePerson = malloc(sizeof(struct linkedlist));
         while (counter < 6) {
             while (token != NULL) {
-                printf("Enters while lopp\n");
-                printf(" %s\n", token);
 
-                //printf("%s",newPerson->data->fname);
 
                 if (counter == 0) {
-                    printf("This is the fname token: %s\n", token);
                     strcpy(newPerson->fname, token);
                 } else if (counter == 1) {
-                    printf("This is the lname token: %s\n", token);
                     strcpy(newPerson->lname, token);
                 } else if (counter == 2) {
-                    printf("This is the email token: %s\n", token);
                     strcpy(newPerson->email, token);
                 } else if (counter == 3) {
-                    printf("This is the age token: %s\n", token);
                     strcpy(newPerson->age, token);
                 } else if (counter == 4) {
-                    printf("This is the hometown token: %s\n", token);
                     strcpy(newPerson->hometown, token);
                 } else if (counter == 5) {
-                    printf("This is the hobby token: %s\n", token);
                     strcpy(newPerson->hobby, token);
                 } else {
                     printf("Didnt enter anything\n");
@@ -511,26 +485,17 @@ bool retrieveNetwork(char* peopleFilename, char* connectionsFilename){
     }
 
     while (fgets(line,sizeof(line),file2) != NULL){
-        printf("This is the  line: %s\n", line);
         token = strtok(line, ",");
 
         struct linkedlist * newConnectionNode = malloc(sizeof(struct linkedlist));
         int counter = 0;
         while (token != NULL){
-            //printf("Token:%s\n",token);
             struct linkedlist * curr = globalHead;
-            printf("Enters token for loop\n");
             while (curr != NULL){
-                printf("Enters global head loop\n");
-                printf("Token:%s\n",token);
-                printf("Current email:%s\n",curr->data->email );
                 if (strcmp(token,curr->data->email) ==0){
-                    printf("Enters token if\n");
                     if (counter == 0){
-                        printf("Enters counter 0\n");
                         newConnectionNode->connection1 = curr->data;
                     }else {
-                        printf("Enters counter 1\n");
                         newConnectionNode->connection2 = curr->data;
                     }
                 }
@@ -551,9 +516,9 @@ bool retrieveNetwork(char* peopleFilename, char* connectionsFilename){
  * @return
  */
 int main() {
-    char choice[5];
-    char email1[30];
-    char email2[30];
+    char choice[10];
+    char email1[255];
+    char email2[255];
     char peopleFilename[255];
     char connectionsFilename[255];
 
