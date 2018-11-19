@@ -14,11 +14,10 @@ struct linkedlist * globalHead; // Global Linked list of all the people
 struct linkedlist * connections; // Global LL for the connections
 
 struct person { // This is a person
-    struct linkedlist *friends;
     char email [255];
     char fname [255];
     char lname [255];
-    char age [2];
+    char age [255];
     char hometown[255];
     char hobby[255];
 };
@@ -46,6 +45,7 @@ bool search (char * email){
         }
         curr= curr->next;
     }
+    return false;
 
 }
 
@@ -393,108 +393,199 @@ bool saveNetwork(char* peopleFilename, char* connectionsFilename){
 
     if (file1 == NULL || file2 == NULL ){
         printf("Couldnt open file");
-        return 0;
+        return false;
     }
 
     while (tempP != NULL){
-        fprintf(file1, "First Name: %s, Last Name: %s, Email: %s, Age: %s, Hometown: %s, Hobby: %s\n", tempP->data->fname, tempP->data->lname, tempP->data->email, tempP->data->age, tempP->data->hometown, tempP->data->hobby);
+        fprintf(file1, "%s, %s, %s, %s, %s, %s\n", tempP->data->fname, tempP->data->lname, tempP->data->email, tempP->data->age, tempP->data->hometown, tempP->data->hobby);
         tempP = tempP->next;
     }
     fclose(file1);
 
     while (tempC != NULL){
-        fprintf(file2, "%s and %s\n", tempC->connection1->email, tempC->connection2->email);
+        fprintf(file2, "%s, %s\n", tempC->connection1->email, tempC->connection2->email);
         tempC = tempC->next;
     }
+    fclose(file2);
+    free(tempC);
+    free(tempP);
+    return true;
 
 }
 
 bool retrieveNetwork(char* peopleFilename, char* connectionsFilename){
+    FILE *file1 = fopen(peopleFilename,"r");
+    FILE *file2 = fopen(connectionsFilename,"r");
+    char line[255];
+    char line2[255];
+    char * token;
+    //int counter = 0;
+
+    //struct linkedlist * newNodeConnection = malloc(sizeof(struct linkedlist));
+
+
+    if (file1 == NULL || file2 == NULL ){
+        printf("Couldnt open file");
+        return false;
+    }
+
+
+    while (fgets(line,sizeof(line),file1) != NULL) {
+        printf("%s", line);
+        token = strtok(line, ",");
+        int counter = 0;
+        struct person * newPerson = malloc(sizeof(struct person));
+        struct linkedlist * newNodePerson = malloc(sizeof(struct linkedlist));
+        while (counter < 6) {
+            while (token != NULL) {
+                printf("Enters while lopp\n");
+                printf(" %s\n", token);
+
+                //printf("%s",newPerson->data->fname);
+
+                if (counter == 0) {
+                    printf("This is the fname token: %s\n", token);
+                    strcpy(newPerson->fname, token);
+                } else if (counter == 1) {
+                    printf("This is the lname token: %s\n", token);
+                    strcpy(newPerson->lname, token);
+                } else if (counter == 2) {
+                    printf("This is the email token: %s\n", token);
+                    strcpy(newPerson->email, token);
+                } else if (counter == 3) {
+                    printf("This is the age token: %s\n", token);
+                    strcpy(newPerson->age, token);
+                } else if (counter == 4) {
+                    printf("This is the hometown token: %s\n", token);
+                    strcpy(newPerson->hometown, token);
+                } else if (counter == 5) {
+                    printf("This is the hobby token: %s\n", token);
+                    strcpy(newPerson->hobby, token);
+                } else {
+                    printf("Didnt enter anything\n");
+                }
+                counter++;
+
+                token = strtok(NULL, ",");
+
+            }
+        }
+        newNodePerson->data = newPerson;
+        newNodePerson->next = globalHead;
+        globalHead = newNodePerson;
+
+
+    }
+
+    while (fgets(line,sizeof(line),file2) != NULL){
+        printf("This is the  line: %s\n", line);
+        token = strtok(line, ",");
+
+        struct linkedlist * newConnectionNode = malloc(sizeof(struct linkedlist));
+        int counter = 0;
+        while (token != NULL){
+            //printf("Token:%s\n",token);
+            struct linkedlist * curr = globalHead;
+            printf("Enters token for loop\n");
+            while (curr != NULL){
+                printf("Enters global head loop\n");
+                printf("Token:%s\n",token);
+                printf("Current email:%s\n",curr->data->email );
+                if (strcmp(token,curr->data->email) ==0){
+                    printf("Enters token if\n");
+                    if (counter == 0){
+                        printf("Enters counter 0\n");
+                        newConnectionNode->connection1 = curr->data;
+                    }else {
+                        printf("Enters counter 1\n");
+                        newConnectionNode->connection2 = curr->data;
+                    }
+                }
+                curr = curr->next;
+            }
+            token = strtok(NULL, ",");
+            counter++;
+        }
+        newConnectionNode->next = connections;
+        connections = newConnectionNode;
+    }
+
 
 }
 
-/*void display(){
-    struct linkedlist * currP = globalHead;
-    //struct linkedlist * currC = connections;
-
-
-    while (currP != NULL){
-        //printf("Enters first while loop");
-        printf("\n %s {\n",currP->data->fname);
-        struct linkedlist * currC = connections;
-        while (currC != NULL){
-            //printf("Enters second while loop");
-            if (strcmp(currP->data->fname,currC->connection1->fname) ==0 || strcmp(currP->data->fname,currC->connection2->fname) ==0 ){
-                //printf("Enters the first if statement\n");
-                if (strcmp(currP->data->fname,currC->connection1->fname) ==0) {
-                   // printf("Enters the second if statement\n");
-                    printf("%s \n", currC->connection2->fname);
-                    currC = currC->next;
-                    continue;
-
-                } else if (strcmp(currP->data->fname,currC->connection2->fname) ==0) {
-                    //printf("Enters the third if statement\n");
-                    printf("%s \n", currC->connection1->fname);
-                    //printf("ends the third if statement\n");
-                    currC = currC->next;
-                    continue;
-
-                }
-                currC = currC->next;
-            }
-            currC = currC->next;
-
-        }
-        currP = currP->next;
-    }
-    printf("Done");
-
-}*/
-
 
 int main() {
-    char choice [5];
+    char choice[5];
     char email1[30];
-    char email2 [30];
-/*
-    printf("Hello and welcome to the social network\n" );
-    while (strcmp(choice,"x") != 0) {
-        printf("Here are your choices: \n a - add \n r - remove \n e - edit\n c - connect\n x - exit\n");
+    char email2[30];
+    char peopleFilename[255];
+    char connectionsFilename[255];
+
+    printf("Hello and welcome to the social network\n");
+    while (strcmp(choice, "x") != 0) {
+        printf("Here are your choices: \n a - add \n r - remove \n e - edit\n c - connect\n d - display\n i - disconnect\n f - get Friends\n s - save Network\n n - retrieve Network\n x - exit\n");
         scanf("%s", choice);
-        if (strcmp(choice, "a") == 0 ) {
+        if (strcmp(choice, "a") == 0) {
             printf("Please enter your email: ");
-            scanf("%s",email1);
+            scanf("%s", email1);
             add(email1);
         }
-        if (strcmp(choice, "r") == 0 ){
+        if (strcmp(choice, "r") == 0) {
             printf("Please enter your email: ");
-            scanf("%s",email1);
+            scanf("%s", email1);
             removee(email1);
         }
-        if (strcmp(choice, "e") == 0 ) {
+        if (strcmp(choice, "e") == 0) {
             printf("Please enter your email: ");
             scanf("%s", email1);
             edit(email1);
         }
 
-        if (strcmp(choice,"c")== 0){
+        if (strcmp(choice, "c") == 0) {
             printf("Please enter email 1: ");
             scanf("%s", email1);
             printf("please enter Email 2: ");
             scanf("%s", email2);
-            connect(email1,email2);
-            printf("%s\n", connections->connection1->email);
-            printf("%s\n", connections->connection2->email);
+            connect(email1, email2);
+        }
+        if (strcmp(choice, "d") == 0) {
+            display();
+        }
+        if (strcmp(choice, "i") == 0) {
+            printf("Please enter email 1: ");
+            scanf("%s", email1);
+            printf("please enter Email 2: ");
+            scanf("%s", email2);
+            disconnect(email1, email2);
+        }
+        if (strcmp(choice, "f") == 0) {
+            printf("Please enter your email: ");
+            scanf("%s", email1);
+            getFriends(email1);
+        }
+        if (strcmp(choice, "s") == 0) {
+            printf("Please enter the file name of people");
+            scanf("%s", peopleFilename);
+            printf("Please enter the file name of connections");
+            scanf("%s", connectionsFilename);
+            saveNetwork(peopleFilename, connectionsFilename);
+
+        }
+        if (strcmp(choice, "n") == 0) {
+            printf("Please enter the file name of people");
+            scanf("%s", peopleFilename);
+            printf("Please enter the file name of connections");
+            scanf("%s", connectionsFilename);
+            retrieveNetwork(peopleFilename, connectionsFilename);
+
         }
 
-        printf("%s\n", globalHead->data->fname);
-
-
     }
-    printf("%s\n", connections->connection1->email);
-    printf("%s\n", connections->connection2->email);
-    */
 
+
+}
+
+/*
     add("Vasanth");
     add("Nitya");
     add("Dad");
@@ -517,8 +608,12 @@ int main() {
     printf("Second display\n");
     display();
 
+
     saveNetwork("people.txt", "connections.txt");
 
+    retrieveNetwork("people.txt", "connections.txt");
+    printf("First email: %s\n",globalHead->data->email);
+    printf("First connection email: %s", connections->next->connection1->email);
+    printf("Second connection email: %s", connections->connection2->email);
 
-
-}
+*/
