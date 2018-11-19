@@ -108,7 +108,7 @@ bool add (char* email){
     scanf("%s",new->lname);
     printf("Enter the age");
     scanf("%s",new->age);
-    printf("Enter the hometown of the person");
+    printf("Enter the hometown of the person (Please dont use any commas in your submission)");
     scanf("%s",new->hometown);
     printf("Enter the your hobby");
     scanf("%s",new->hobby);
