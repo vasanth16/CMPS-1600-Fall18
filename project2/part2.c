@@ -109,9 +109,9 @@ bool add (char* email){
     printf("Enter the age");
     scanf("%s",new->age);
     printf("Enter the hometown of the person (Please dont use any commas in your submission)");
-    scanf("%s",new->hometown);
+    scanf(" %[^\n]s",new->hometown);
     printf("Enter the your hobby");
-    scanf("%s",new->hobby);
+    scanf(" %[^\n]s",new->hobby);
 
     newNode->data = new;
     newNode->next = globalHead;
@@ -229,23 +229,23 @@ bool edit (char* email){
             scanf("%d", &choice);
              if (choice == 2){
                 printf("Enter new first name");
-                scanf("%s", temp);
+                scanf(" %[^\n]s", temp);
                 strcpy(globalHead->data->fname, temp);
             } else if(choice==3){
                 printf("Enter new last name");
-                scanf("%s", temp);
+                scanf(" %[^\n]s", temp);
                 strcpy(globalHead->data->lname, temp);
             } else if (choice == 4){
                 printf("Enter new age");
-                scanf("%s", temp);
+                scanf(" %[^\n]s", temp);
                 strcpy(globalHead->data->age, temp);
             } else if (choice == 5){
                 printf("Enter new hometown");
-                scanf("%s", temp);
+                scanf(" %[^\n]s", temp);
                 strcpy(globalHead->data->hometown, temp);
             } else if (choice == 6){
                 printf("Enter new hobby");
-                scanf("%s", temp);
+                scanf(" %[^\n]s", temp);
                 strcpy(globalHead->data->hobby, temp);
             } else if (choice == 9){
                 return true;
@@ -436,6 +436,8 @@ bool retrieveNetwork(char* peopleFilename, char* connectionsFilename){
     char line[255];
     char line2[255];
     char * token;
+    globalHead = NULL;
+    connections = NULL;
 
 
 
