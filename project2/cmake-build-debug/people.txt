@@ -1,0 +1,5 @@
+Kate, Rose,kate@gmail.com, 20, Washington, designing
+Amber, Vinulian,amber@gmail.com, 20, NeedhamMA, drinking
+Sam, Childs,sam@gmail.com, 20, Pittsburg, food
+Emma, Berry,emma@gmail.com, 20, Chicago, reading
+Vasanth, Rajasekaran,vas@gmail.com, 20, LexingtonMA, Soccer

@@ -1,0 +1,72 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/vasanthrajasekaran/Documents/Sophomore Year/CMPS 1600/Lab7/BankAccount.cpp
+iostream
+-
+string
+-
+BankAccount.h
+/Users/vasanthrajasekaran/Documents/Sophomore Year/CMPS 1600/Lab7/BankAccount.h
+cstdlib
+-
+
+/Users/vasanthrajasekaran/Documents/Sophomore Year/CMPS 1600/Lab7/BankAccount.h
+iostream
+-
+string
+-
+cstdlib
+-
+
+/Users/vasanthrajasekaran/Documents/Sophomore Year/CMPS 1600/Lab7/CheckingAccount.cpp
+CheckingAccount.h
+/Users/vasanthrajasekaran/Documents/Sophomore Year/CMPS 1600/Lab7/CheckingAccount.h
+BankAccount.h
+/Users/vasanthrajasekaran/Documents/Sophomore Year/CMPS 1600/Lab7/BankAccount.h
+
+/Users/vasanthrajasekaran/Documents/Sophomore Year/CMPS 1600/Lab7/CheckingAccount.h
+BankAccount.h
+/Users/vasanthrajasekaran/Documents/Sophomore Year/CMPS 1600/Lab7/BankAccount.h
+iostream
+-
+string
+-
+cstdlib
+-
+
+/Users/vasanthrajasekaran/Documents/Sophomore Year/CMPS 1600/Lab7/SavingsAccount.cpp
+SavingsAccount.h
+/Users/vasanthrajasekaran/Documents/Sophomore Year/CMPS 1600/Lab7/SavingsAccount.h
+BankAccount.h
+/Users/vasanthrajasekaran/Documents/Sophomore Year/CMPS 1600/Lab7/BankAccount.h
+
+/Users/vasanthrajasekaran/Documents/Sophomore Year/CMPS 1600/Lab7/SavingsAccount.h
+BankAccount.h
+/Users/vasanthrajasekaran/Documents/Sophomore Year/CMPS 1600/Lab7/BankAccount.h
+iostream
+-
+string
+-
+cstdlib
+-
+
+/Users/vasanthrajasekaran/Documents/Sophomore Year/CMPS 1600/Lab7/main.cpp
+iostream
+-
+string
+-
+cstdlib
+-
+CheckingAccount.h
+/Users/vasanthrajasekaran/Documents/Sophomore Year/CMPS 1600/Lab7/CheckingAccount.h
+SavingsAccount.h
+/Users/vasanthrajasekaran/Documents/Sophomore Year/CMPS 1600/Lab7/SavingsAccount.h
+BankAccount.h
+/Users/vasanthrajasekaran/Documents/Sophomore Year/CMPS 1600/Lab7/BankAccount.h
+

@@ -30,6 +30,7 @@ struct  linkedlist{
     struct person * connection1; // These connection variables are used for the connections LL only
     struct person * connection2;
 };
+
 /**
  * Checks if person already exists based on the email
  * @param email
@@ -38,6 +39,7 @@ struct  linkedlist{
 bool search (char * email){
     //printf("Enters friends");
     struct linkedlist * curr = globalHead;
+
     while (curr != NULL){
         if(strcmp(curr->data->email, email) == 0){
             return true;
@@ -45,6 +47,7 @@ bool search (char * email){
         curr= curr->next;
     }
     return false;
+
 }
 
 /**
@@ -83,6 +86,8 @@ bool searchC2 (char * email){
     }
     return false;
 }
+
+
 /**
  * Adds a person to the global LL of people
  * @param email
@@ -139,6 +144,8 @@ bool removeCs (char * email1){
         free(temp);
         return true;
     }
+
+
     while (strcmp(temp->connection1->email, email1) != 0 || strcmp(temp->connection2->email, email1) != 0){
         if (temp->next != NULL) {
             prev = temp;
@@ -147,10 +154,14 @@ bool removeCs (char * email1){
             break;
         }
     }
+
     if (temp == NULL) return false;
+
     prev->next = temp->next;
     free(temp);
     return true;
+
+
 }
 
 /**
@@ -160,6 +171,7 @@ bool removeCs (char * email1){
  */
 
 bool removee (char email[]){
+
     struct linkedlist* temp = globalHead;
     struct linkedlist * prev = malloc(sizeof(struct linkedlist));
     while (searchC2(email) == true){
@@ -183,6 +195,9 @@ bool removee (char email[]){
     if (temp == NULL) return false;
 
     prev->next = temp->next;
+
+
+
     free(temp);
 }
 
@@ -254,7 +269,11 @@ bool connect (char * email1, char * email2){
     }
     struct person *temp1 = NULL;
     struct person *temp2 = NULL;
+
     struct linkedlist * curr = globalHead;
+
+
+
     while (curr != NULL) {
         if (strcmp(curr->data->email, email1) == 0) {
             temp1 = curr->data;
@@ -262,6 +281,7 @@ bool connect (char * email1, char * email2){
         else if (strcmp(curr->data->email, email2) == 0){
             temp2 = curr->data;
         }
+
         if (temp1!= NULL && temp2 != NULL){
             struct linkedlist * newNode = malloc(sizeof(struct linkedlist));
             newNode->connection1 = temp1;
@@ -273,6 +293,8 @@ bool connect (char * email1, char * email2){
         }
         curr = curr->next;
     }
+
+
 }
 
 /**
@@ -310,6 +332,7 @@ void display(){
 bool disconnect(char* email1, char* email2){
     struct linkedlist * temp = connections;
     struct linkedlist * prev = NULL;
+
     if (strcmp(email1,  connections->connection1->email) == 0 && strcmp(email2, connections->connection2->email) == 0){
         connections = connections->next;
         free(temp);
@@ -319,6 +342,7 @@ bool disconnect(char* email1, char* email2){
         free(temp);
         return true;
     }
+
     while (temp != NULL){
         if (strcmp(email1, temp->connection1->email) == 0 && strcmp(email2, temp->connection2->email) == 0){
             prev->next = temp->next;
@@ -344,8 +368,11 @@ bool disconnect(char* email1, char* email2){
  */
 
 bool getFriends(char* email){
+
     struct linkedlist * temp = connections;
+
     printf("\n%s's Friends are: \n",email);
+
     while (temp != NULL){
         if (strcmp(email, temp->connection1->email) == 0){
             printf("%s\n", temp->connection2->fname);
@@ -354,7 +381,10 @@ bool getFriends(char* email){
         }
         temp = temp->next;
     }
+
+
 }
+
 /**
  * Saves the network to a text file
  * @param peopleFilename
@@ -365,17 +395,23 @@ bool getFriends(char* email){
 bool saveNetwork(char* peopleFilename, char* connectionsFilename){
     FILE *file1 = fopen(peopleFilename,"w");
     FILE *file2 = fopen(connectionsFilename,"w");
+
     struct linkedlist * tempP = globalHead;
     struct linkedlist * tempC = connections;
+
+
+
     if (file1 == NULL || file2 == NULL ){
         printf("Couldnt open file");
         return false;
     }
+
     while (tempP != NULL){
         fprintf(file1, "%s,%s,%s,%s,%s,%s\n", tempP->data->fname, tempP->data->lname, tempP->data->email, tempP->data->age, tempP->data->hometown, tempP->data->hobby);
         tempP = tempP->next;
     }
     fclose(file1);
+
     while (tempC != NULL){
         fprintf(file2, "%s,%s,\n", tempC->connection1->email, tempC->connection2->email);
         tempC = tempC->next;
@@ -384,6 +420,7 @@ bool saveNetwork(char* peopleFilename, char* connectionsFilename){
     free(tempC);
     free(tempP);
     return true;
+
 }
 
 /**
@@ -401,10 +438,15 @@ bool retrieveNetwork(char* peopleFilename, char* connectionsFilename){
     char * token;
     globalHead = NULL;
     connections = NULL;
+
+
+
     if (file1 == NULL || file2 == NULL ){
         printf("Couldnt open file");
         return false;
     }
+
+
     while (fgets(line,sizeof(line),file1) != NULL) {
         token = strtok(line, ",");
         int counter = 0;
@@ -412,6 +454,8 @@ bool retrieveNetwork(char* peopleFilename, char* connectionsFilename){
         struct linkedlist * newNodePerson = malloc(sizeof(struct linkedlist));
         while (counter < 6) {
             while (token != NULL) {
+
+
                 if (counter == 0) {
                     strcpy(newPerson->fname, token);
                 } else if (counter == 1) {
@@ -430,6 +474,7 @@ bool retrieveNetwork(char* peopleFilename, char* connectionsFilename){
                 counter++;
 
                 token = strtok(NULL, ",");
+
             }
         }
         if (search(newPerson->email) == false) {
@@ -437,6 +482,8 @@ bool retrieveNetwork(char* peopleFilename, char* connectionsFilename){
             newNodePerson->next = globalHead;
             globalHead = newNodePerson;
         }
+
+
     }
 
     while (fgets(line,sizeof(line),file2) != NULL){
@@ -462,6 +509,8 @@ bool retrieveNetwork(char* peopleFilename, char* connectionsFilename){
         newConnectionNode->next = connections;
         connections = newConnectionNode;
     }
+
+
 }
 
 /**
