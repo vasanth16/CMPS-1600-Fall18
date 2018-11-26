@@ -21,6 +21,10 @@ double BankAccount::deposit(double amount){ // adds the amount to balance
 }
 
 double BankAccount::withdraw (double amount){ // subtracts the amount from the balance
+    if ((balance - amount) < 0 ){
+        cout << "Not enough funds" << endl;
+        return 0;
+    }
     balance -= amount;
 }
 

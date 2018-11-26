@@ -9,8 +9,6 @@ using namespace std;
 #include "SavingsAccount.h"
 #include "BankAccount.h"
 
-
-
 int main(){
     // the first main function
     BankAccount starter("Starter",0);
