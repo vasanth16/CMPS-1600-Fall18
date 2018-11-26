@@ -12,16 +12,16 @@
 
 class CheckingAccount:public BankAccount{
 public:
-    void withdraw(double amount);
+    void withdraw(double amount); // defines the withdraw and deposit again since transactions need to be added
     void deposit(double amount);
-    void deductFees ();
-    CheckingAccount();
+    void deductFees (); // substracts fees based on transactionCount and the fee number
+    CheckingAccount(); // default and component constructors
     CheckingAccount(string n, double b);
 
 
 private:
-    int transactionCount = 0;
-    static const int TRANSACTION_FEE = 3;
+    int transactionCount = 0; // number of withdraws and deposits
+    static const int TRANSACTION_FEE = 3; // the fee for each transaction which
 
 };
 

@@ -4,7 +4,7 @@
 using namespace std;
 
 
-
+// Imports the class definitions
 #include"CheckingAccount.h"
 #include "SavingsAccount.h"
 #include "BankAccount.h"
@@ -12,6 +12,7 @@ using namespace std;
 
 
 int main(){
+    // the first main function
     BankAccount starter("Starter",0);
     BankAccount advanced("Advanced",500);
 
@@ -25,7 +26,7 @@ int main(){
     starter.toString();
 
     advanced.toString();
-
+// the second main function
     SavingsAccount savings("Savings", 0,1);
     CheckingAccount checking("Checking",500);
 

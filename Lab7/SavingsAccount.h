@@ -11,14 +11,14 @@
 #include <cstdlib>
 
 
-class SavingsAccount:public BankAccount{
+class SavingsAccount:public BankAccount{ // savings account class
 public:
-    void addInterest();
-    SavingsAccount();
-    SavingsAccount(string name, double balance, double i);
+    void addInterest(); // adds interest
+    SavingsAccount(); // default constructor
+    SavingsAccount(string name, double balance, double i); // constructor with all the components
 
 private:
-    double interestRate;
+    double interestRate; // interest rate which is unique to this class
 };
 
 
