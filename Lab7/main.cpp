@@ -35,6 +35,9 @@ int main(){
     savings.withdraw(200);
     checking.deposit(200);
 
+    savings.toString();
+    checking.toString();
+
     savings.addInterest();
     checking.deductFees();
 
