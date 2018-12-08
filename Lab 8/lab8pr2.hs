@@ -1,4 +1,4 @@
---Tullia Glaeser and Vasanth Rajasekaran
+ --Tullia Glaeser and Vasanth Rajasekaran
 --Lab: Tuesday 5-6:15pm
 --Parisa Kordjamshidi
 --7 December 2018
